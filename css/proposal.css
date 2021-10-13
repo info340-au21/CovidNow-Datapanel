@@ -9,12 +9,18 @@ header {
     padding: 20px;
 }
 
-h1, h2, h3 {
+p {
+    line-height: 1.8;
+}
+
+h1, h2 {
     color: #ec4444;
     font-family: 'Noto Sans Mono', monospace;
 }
 
 h3 {
+    color: #ec4444;
+    font-family: 'Georama', sans-serif;
     margin-bottom: 0px;
 }
 
