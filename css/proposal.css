@@ -14,6 +14,10 @@ h1, h2, h3 {
     font-family: 'Noto Sans Mono', monospace;
 }
 
+h3 {
+    margin-bottom: 0px;
+}
+
 main {
     margin-left: auto;
     margin-right: auto;
@@ -26,4 +30,12 @@ a:link {
 
 a:visited {
     color: #EC4145;
+}
+
+.questions h3 {
+    margin-bottom: 0%;
+}
+
+.questions p {
+    margin-top: 1%;
 }
