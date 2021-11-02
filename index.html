@@ -31,7 +31,7 @@
                     <a class="nav-link" href="index.html">Overview</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link" data-toggle="collapse" data-target=".multi-collapse" href="#collapseDashboard" role="button" aria-expanded="false" aria-controls=".multi-collapse">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About Us</a>
@@ -45,7 +45,7 @@
         </div>
     </nav>
     <main>
-        <div class="overview">
+        <div class="overview collapse show multi-collapse" id="collapseOverview">
             <div class="overview-container">
                 <!-- heading section -->
                 <section>
@@ -69,6 +69,26 @@
                 </section>
             </div>
             <img src="./img/scale.png" alt="scale">
+        </div>
+        <div class="dashboard collapse multi-collapse" id="collapseDashboard">
+            <section>
+                <h1>Washington</h1>
+                <h2>as of <span>April 13</span>.</h2>
+                <div class="data-cd">
+                    <div>
+                        <h3>cases</h3>
+                        <p>1,831</p>
+                    </div>
+                    <div>
+                        <h3>deaths</h3>
+                        <p>798</p>
+                    </div>
+                </div>
+                <div class="slider"><img src="./img/time-slider.png" alt="time slider"></div>
+            </section>
+            <section>
+                <img class="wa-map d-none d-sm-block" src="./img/wa.svg" alt="WA Map">
+            </section>
         </div>
     </main>    
     <footer>
