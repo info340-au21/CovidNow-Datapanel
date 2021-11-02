@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+header {
+    padding-bottom: 0;
+}
+main {
+    width: 100vw;
+    margin: 0;
+}
+.container {
+    display: flex; /* or inline-flex */
+    align-items: stretch;
+    flex-wrap: nowrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+   }
+
+.flex-item{
+    text-align: center;
+    justify-content: center;
+    align-self: stretch;
+    flex: 1;
+    background-color:#2F3136;
+    padding:10%;
+    color: white;
+  }
+
+.flex-item > h4 {
+    color: #9F9F9F;
+}
+
+#panel {
+    background-color: #DA524B;
+}
+
+#panel > h1 {
+    color: white;
+}
+
+#panel > h2 {
+    color: white;
+}
+
+.btn {
+    background-color: #EC4444;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+#login-form {
+    text-align: left;
+}
+
+@media only screen and (max-width: 0px) {
+
+    #panel {
+        display: none;
+    }
+
+    .container {
+        max-width: 100vw;
+    }
+
+    .flex-item {
+        padding: 10%;
+    }
+
+    #login-column {
+        text-align: center;
+        justify-content: center;
+        align-self: stretch;
+    }
+  }
+
+
+@media only screen and (max-width: 576px) {
+
+    #panel {
+        display: none;
+    }
+
+    .container {
+        max-width: 100vw;
+    }
+
+    .flex-item {
+        padding: 10%;
+    }
+
+    #login-column {
+        text-align: center;
+        justify-content: center;
+        align-self: stretch;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    #panel {
+        display: none;
+    }
+
+    .container {
+        max-width: 100vw;
+    }
+
+    .flex-item {
+        padding: 10%;
+    }
+
+    #login-column {
+        text-align: center;
+        justify-content: center;
+        align-self: stretch;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .container {
+        max-width: 100vw;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+
+    #panel {
+        display: none;
+    }
+
+    .container {
+        max-width: 100vw;
+    }
+
+    .flex-item {
+        padding: 10%;
+    }
+    #login-column {
+        text-align: center;
+        justify-content: center;
+        align-self: stretch;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+
+    .container {
+        max-width: 100vw;
+    }
+    
+    .flex-item {
+        padding: 10%;
+    }
+
+    #login-column {
+        text-align: center;
+        justify-content: center;
+        align-self: stretch;
+    }
+  }
