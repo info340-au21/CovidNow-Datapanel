@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
     <title>Map Panel</title>
@@ -20,10 +21,26 @@
         <a class="navbar-brand" href="index.html">
         <img src="./img/logo.svg" class="d-inline-block align-top" alt="">
         </a>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="index.html">Overview</a>
-            <a class="nav-item nav-link" href="#">Dashboard</a>
-            <a class="nav-item nav-link" href="about.html">About Us</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+              </ul>
+            <div class="nav navbar-nav navbar-right">
+                <a class="nav-item nav-link" href="login.html">
+                    <span class="material-icons">login</span> Login
+                </a>
+            </div>
         </div>
     </nav>
 </body>
