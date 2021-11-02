@@ -46,3 +46,7 @@ main {
     margin-right: auto;
     width: 50%;
 }
+
+.material-icons {
+    vertical-align: middle;
+}
