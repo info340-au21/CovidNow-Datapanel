@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
 }
 
@@ -38,6 +37,11 @@ h2 {
     font-size: 24px;
     font-weight: 400;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #EF4444;
 }
 
 p {
@@ -98,7 +102,7 @@ footer {
 }
 
 
-footer div {
+footer a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,13 +112,18 @@ footer div {
     border-bottom: transparent solid 3px;
 }
 
-footer div:first-child {
+footer i {
+    position: relative;
+    bottom: 5px;
+}
+
+footer div:first-child a {
     font-size: 30px;
     color: #EF4444;
     border-color: #EF4444;
 }
 
-footer div:last-child {
+footer div:last-child a {
     font-size: 30px;
     color: #9b9292;
 }
