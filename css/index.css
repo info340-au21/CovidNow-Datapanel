@@ -53,7 +53,7 @@ h2 span {
     color: #EF4444;
 }
 
-.us-map {
+.us-map, .wa-map, .trend, .rate {
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -62,6 +62,10 @@ h2 span {
 .overview-container + img {
     margin: 2rem 0;
     margin-bottom: 4rem;
+}
+
+.trend, .rate {
+    margin: 2rem 0;
 }
 
 .slider img {
@@ -88,6 +92,12 @@ h2 span {
 .data-cd p {
     font-weight: 500;
     font-size: 41px;
+}
+
+.wa-map {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
 }
 
 footer {
@@ -153,7 +163,7 @@ body {
         font-size: 28px;
     }
 
-    .overview-container {
+    .overview-container, .dashboard-container {
         width: clac(100% -28px);
         margin: 0;
         padding: 0;
@@ -161,12 +171,12 @@ body {
         height: 100%;
     }
 
-    .overview-container section {
+    .overview-container section, .dashboard-container section {
         margin: 0;
         height: 100%;
     }
 
-    .overview-container section:first-child {
+    .overview-container section:first-child, .dashboard-container section:first-child {
         width: 25%;
     }
 
@@ -188,15 +198,24 @@ body {
         margin-left: 0;
     }
 
-    .overview-container section:first-child + section {
+    .overview-container section:first-child + section, .dashboard-container section:first-child + section {
         width: 75%;
     }
-    .overview-container section:first-child + section img {
+    .overview-container section:first-child + section img, .dashboard-container section:first-child + section img {
         margin: 0;
     }
 
     .overview-container + img {
         position: absolute;
         bottom: 50px;
+    }
+
+    .wa-map {
+        width: 60%;
+        position: absolute;
+        top: 30%;
+        right: 0%;
+        transform: translateY(-50%);
+        max-height: 40%;
     }
 }
