@@ -1,0 +1,27 @@
+/* body {
+    background-color: #2F3136;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+} */
+
+/* about-main {
+    padding-top: 6rem; 
+} */
+.about-main {
+    padding-top: 6rem;
+    margin-right: auto;
+    margin-left: 5%;
+    width: 100%;
+}
+
+p {
+    width: 50%;
+    margin-bottom: 4rem;
+}
+
+description {
+    /* margin-left: 100%; */
+    /* text-align: left; */
+    /* margin-left: auto; */
+}
