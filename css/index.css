@@ -4,19 +4,27 @@
     padding: 0;
 }
 
-body, html {
-    width: 100%;
+html {
     height: 100%;
 }
 
+body {
+    height: clac(100% - 62px);
+    margin: 62px 0;
+}
+
+body, html {
+    width: 100%;
+}
+
 main {
-    margin: 0 14px;
     height: 100%;
+    margin: 0 14px;
     width: calc(100% - 28px);
 }
 
 h1 {
-    margin-top: 70px;
+    padding-top: 1rem;
     font-weight: 700;
     font-size: 41px;
 }
@@ -32,23 +40,39 @@ h2 {
     margin: 0;
 }
 
+p {
+    margin: 0;
+}
+
 h2 span {
     font-weight: 700;
     color: #EF4444;
 }
 
-h2 + img {
-    margin-top: 36px;
+.us-map {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.overview-container + img {
+    margin: 2rem 0;
+    margin-bottom: 4rem;
 }
 
 .slider img {
     display: block; /* default inline block is not influnced by margin auto */
-    margin: 36px auto;
+    margin: 2rem auto;
 }
 
 .data-cd {
+    margin-top: 1rem;
     display: flex;
     justify-content: space-evenly;
+}
+
+.data-cd div {
+    margin-right: 20px;
 }
 
 .data-cd h3 {
@@ -70,7 +94,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(255, 184, 184, 0.1);
+    background-color: #433E43;
 }
 
 
@@ -84,12 +108,86 @@ footer div {
     border-bottom: transparent solid 3px;
 }
 
-footer div:first-child i {
+footer div:first-child {
     font-size: 30px;
     color: #EF4444;
+    border-color: #EF4444;
 }
 
-footer div:last-child i {
+footer div:last-child {
     font-size: 30px;
     color: #9b9292;
+}
+
+@media  (min-width: 992px) {
+body {
+    height: 100%;
+}
+
+    main {
+        margin: 0 2rem;
+        width: calc(100% - 4rem);
+        height: 100%;
+    }
+
+    footer {
+        display: none;
+    }
+
+    h1 {
+        padding: 0;
+        font-size: 3.5rem;
+        margin-top: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .overview-container {
+        width: clac(100% -28px);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100%;
+    }
+
+    .overview-container section {
+        margin: 0;
+        height: 100%;
+    }
+
+    .overview-container section:first-child {
+        width: 25%;
+    }
+
+    .us-map {
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        max-height: 80%;
+    }
+
+    .data-cd {
+        min-width: 60%;
+        max-width: 75%;
+        justify-content: space-between;
+    }
+
+    .slider img {
+        margin-left: 0;
+    }
+
+    .overview-container section:first-child + section {
+        width: 75%;
+    }
+    .overview-container section:first-child + section img {
+        margin: 0;
+    }
+
+    .overview-container + img {
+        position: absolute;
+        bottom: 50px;
+    }
 }
