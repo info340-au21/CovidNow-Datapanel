@@ -7,7 +7,6 @@
 body, html {
     width: 100%;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
 }
 
 main {
@@ -30,11 +29,16 @@ h1, h2 {
 h2 {
     font-size: 24px;
     font-weight: 400;
+    margin: 0;
 }
 
 h2 span {
     font-weight: 700;
     color: #EF4444;
+}
+
+h2 + img {
+    margin-top: 36px;
 }
 
 .slider img {
