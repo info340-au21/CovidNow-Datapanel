@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    height: clac(100% - 62px);
+    height: calc(100% - 62px);
     margin: 62px 0;
 }
 
@@ -138,10 +138,14 @@ footer div:last-child a {
     color: #9b9292;
 }
 
-@media  (min-width: 992px) {
-body {
-    height: clac(100% - 62px);
+.wa-map {
+    display: none;
 }
+
+@media  (min-width: 992px) {
+    body {
+        height: calc(100% - 62px);
+    }
 
     main {
         margin: 0 2rem;
@@ -163,8 +167,12 @@ body {
         font-size: 28px;
     }
 
+    .overview {
+        height: 100%;
+    }
+
     .overview-container, .dashboard-container {
-        width: clac(100% -28px);
+        width: calc(100% - 28px);
         margin: 0;
         padding: 0;
         display: flex;
@@ -199,8 +207,10 @@ body {
     }
 
     .overview-container section:first-child + section, .dashboard-container section:first-child + section {
+        height: 363px;
         width: 75%;
     }
+
     .overview-container section:first-child + section img, .dashboard-container section:first-child + section img {
         margin: 0;
     }
@@ -211,11 +221,16 @@ body {
     }
 
     .wa-map {
-        width: 60%;
-        position: absolute;
-        top: 30%;
-        right: 0%;
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 50%;
         transform: translateY(-50%);
-        max-height: 40%;
+        width: 60%;
+        max-height: 90%;
+    }
+
+    .rate {
+        max-width:50%;
     }
 }
