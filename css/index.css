@@ -121,7 +121,7 @@ footer div:last-child {
 
 @media  (min-width: 992px) {
 body {
-    height: 100%;
+    height: clac(100% - 62px);
 }
 
     main {
