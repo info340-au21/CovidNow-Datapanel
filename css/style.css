@@ -1,9 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --first-color: #2F3136;
+    --second-color: #EC4444;
+}
+
 nav {
-    background-color: #ec4444;
+    height: 50px;
+    background-color: var(--second-color);
+}
+
+.nav-item {
+    margin-right: 50px;
 }
 
 body {
-    background-color: #2F3136;
+    background-color: var(--first-color);
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
 }
@@ -18,12 +32,12 @@ p {
 }
 
 h1, h2 {
-    color: #ec4444;
+    color: var(--second-color);
     font-family: 'Noto Sans Mono', monospace;
 }
 
 h3 {
-    color: #ec4444;
+    color: var(--second-color);
     font-family: 'Georama', sans-serif;
 }
 
