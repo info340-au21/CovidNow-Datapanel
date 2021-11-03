@@ -35,15 +35,15 @@ main {
     color: #9F9F9F;
 }
 
-#panel {
+.flex-panel {
     background-color: #DA524B;
 }
 
-#panel > h1 {
+.flex-panel > h1 {
     color: white;
 }
 
-#panel > h2 {
+.flex-panel > h2 {
     color: white;
 }
 
@@ -55,13 +55,13 @@ main {
     width: 100%;
 }
 
-#login-form {
+.login-form {
     text-align: left;
 }
 
 @media only screen and (max-width: 0px) {
 
-    #panel {
+    .flex-panel {
         display: none;
     }
 
@@ -73,7 +73,7 @@ main {
         padding: 10%;
     }
 
-    #login-column {
+    .login-column {
         text-align: center;
         justify-content: center;
         align-self: stretch;
@@ -83,7 +83,7 @@ main {
 
 @media only screen and (max-width: 576px) {
 
-    #panel {
+    .flex-panel {
         display: none;
     }
 
@@ -95,7 +95,7 @@ main {
         padding: 10%;
     }
 
-    #login-column {
+    .login-column {
         text-align: center;
         justify-content: center;
         align-self: stretch;
@@ -104,7 +104,7 @@ main {
 
   @media only screen and (max-width: 768px) {
 
-    #panel {
+    .flex-panel {
         display: none;
     }
 
@@ -116,7 +116,7 @@ main {
         padding: 10%;
     }
 
-    #login-column {
+    .login-column {
         text-align: center;
         justify-content: center;
         align-self: stretch;
@@ -130,7 +130,7 @@ main {
 
   @media only screen and (max-width: 992px) {
 
-    #panel {
+    .flex-panel {
         display: none;
     }
 
@@ -141,7 +141,7 @@ main {
     .flex-item {
         padding: 10%;
     }
-    #login-column {
+    .login-column {
         text-align: center;
         justify-content: center;
         align-self: stretch;
@@ -158,7 +158,7 @@ main {
         padding: 10%;
     }
 
-    #login-column {
+    .login-column {
         text-align: center;
         justify-content: center;
         align-self: stretch;
