@@ -52,7 +52,7 @@ h2 span {
     color: #EF4444;
 }
 
-.us-map, .wa-map, .trend, .rate {
+.us-map, .trend, .rate {
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -91,12 +91,6 @@ h2 span {
 .data-cd p {
     font-weight: 500;
     font-size: 41px;
-}
-
-.wa-map {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
 }
 
 footer {
