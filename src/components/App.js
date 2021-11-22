@@ -15,22 +15,18 @@ export default function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <div
-            class="overview collapse show multi-collapse"
-            id="collapseOverview">
-              <Overview />
-            </div>
+            <Overview />
+          </Route>
+
+          <Route path="/dashboard">
+            
           </Route>
 
           <Route path="/about">
             
           </Route>
 
-          <Route path="/resources">
-            
-          </Route>
-
-          <Route path="/adopt/:params">
+          <Route path="/login">
             
           </Route>
 
