@@ -20,7 +20,7 @@ export function Overview() {
             </div>
           </div>
           <div className="slider">
-            <img src={require("../img/time-slider.png")} alt="time slider" />
+            <img src="./img/time-slider.png" alt="time slider" />
           </div>
         </section>
         <section>
@@ -32,11 +32,11 @@ export function Overview() {
             role="button"
             aria-expanded="false"
             aria-controls=".multi-collapse">
-            <img className="us-map" src={require("../img/us.svg")} alt="US Map" />
+            <img className="us-map" src="./img/us.svg" alt="US Map" />
           </a>
         </section>
       </div>
-      <img src={require("../img/scale.png")} alt="scale" />
+      <img src="./img/scale.png" alt="scale" />
     </div>
   );
 }
