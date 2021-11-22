@@ -34,7 +34,7 @@ export default function App() {
         </Switch>
       </main>
 
-      <footer>
+      <footer className="fixed-bottom">
             <p className="copyright-text">
                 Copyright &copy; 2021 All Rights Reserved by
                 <NavLink to="/about"> Data Panel Project Team Members</NavLink>.
