@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 110%;
+    margin: 62px 0;
+}
+
+body, html {
+    width: 100%;
+}
+
+main {
+    margin: 0 14px;
+    width: calc(100% - 28px);
+}
+
+h1 {
+    padding-top: 1rem;
+    font-weight: 700;
+    font-size: 41px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h2 span {
+    font-weight: 700;
+    color: #EF4444;
+}
+
+.data-head {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #EF4444;
+}
+
+p {
+    margin: 0;
+}
+
+
+.us-map, .trend, .rate {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.overview-container + img {
+    margin: 2rem 0;
+    margin-bottom: 4rem;
+}
+
+.trend, .rate {
+    margin: 2rem 0;
+}
+
+.slider img {
+    display: block; /* default inline block is not influnced by margin auto */
+    margin: 2rem auto;
+}
+
+.data-cd {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.data-cd div {
+    margin-right: 20px;
+}
+
+.data-cd h3 {
+    font-size: 17px;
+    color: white;
+    margin: 0;
+}
+
+.data-cd p {
+    font-weight: 500;
+    font-size: 41px;
+}
+
+.view-control {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #433E43;
+}
+
+
+.view-control a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 60px;  
+    color: white;
+    border-bottom: transparent solid 3px;
+}
+
+.view-control i {
+    position: relative;
+    bottom: 5px;
+}
+
+.view-control div:first-child a {
+    font-size: 30px;
+    color: #EF4444;
+    border-color: #EF4444;
+}
+
+.view-control div:last-child a {
+    font-size: 30px;
+    color: #9b9292;
+}
+
+.wa-map {
+    display: none;
+}
+
+@media  (min-width: 992px) {
+    body {
+        height: calc(100% - 62px);
+    }
+
+    main {
+        height: calc(100% - 40px);
+        margin: 0 2rem;
+        width: calc(100% - 4rem);
+    }
+
+    .view-control {
+        display: none;
+    }
+
+    h1 {
+        padding: 0;
+        font-size: 3.5rem;
+        margin-top: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .overview {
+        height: 100%;
+    }
+
+    .overview-container, .dashboard-container {
+        width: calc(100% - 28px);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100%;
+    }
+
+    .overview-container section, .dashboard-container section {
+        margin: 0;
+        height: 100%;
+    }
+
+    .overview-container section:first-child, .dashboard-container section:first-child {
+        width: 25%;
+    }
+
+    .us-map {
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        max-height: 80%;
+    }
+
+    .data-cd {
+        min-width: 60%;
+        max-width: 75%;
+        justify-content: space-between;
+    }
+
+    .slider img {
+        margin-left: 0;
+    }
+
+    .overview-container section:first-child + section, .dashboard-container section:first-child + section {
+        height: 363px;
+        width: 75%;
+    }
+
+    .overview-container section:first-child + section img, .dashboard-container section:first-child + section img {
+        margin: 0;
+    }
+
+    .overview-container + img {
+        position: absolute;
+        bottom: 50px;
+    }
+
+    .wa-map {
+        display: block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        width: 60%;
+        max-height: 90%;
+    }
+
+    .rate {
+        max-width:50%;
+    }
+}
