@@ -2,6 +2,7 @@ import React from 'react';
 import { NavBar } from './Nav';
 import { Overview } from "./Overview";
 import '../style.css';
+import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
 
 
