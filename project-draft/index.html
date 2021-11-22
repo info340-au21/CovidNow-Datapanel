@@ -1,114 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="author" content="Group BA2" />
+        <meta
+            name="description"
+            content="Covid 19 Data Panel and Summary App"
+        />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <title>Map Panel</title>
+        <link rel="icon" type="image/svg+xml" href="./img/icon.svg" />
+        <script
+            src="https://kit.fontawesome.com/7a0431b0d6.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Group BA2">
-    <meta name="description" content="Covid 19 Data Panel and Summary App">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>Map Panel</title>
-    <link rel="icon" type="image/svg+xml" href="./img/icon.svg">
-    <script src="https://kit.fontawesome.com/7a0431b0d6.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="index.html">
-        <img src="./img/logo.svg" class="d-inline-block align-top" alt="Database Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Overview</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" data-target=".multi-collapse" href="#collapseDashboard" role="button" aria-expanded="false" aria-controls=".multi-collapse">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About Us</a>
-                </li>
-            </ul>
-            <div class="nav navbar-nav navbar-right">
-                <a class="nav-item nav-link" href="login.html">
-                    <span class="material-icons">login</span> Login
-                </a>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">
+                <img
+                    src="./img/logo.svg"
+                    class="d-inline-block align-top"
+                    alt="Database Logo"
+                />
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            data-toggle="collapse"
+                            data-target=".multi-collapse"
+                            href="#collapseDashboard"
+                            role="button"
+                            aria-expanded="false"
+                            aria-controls=".multi-collapse"
+                            >Dashboard</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
+                <div class="nav navbar-nav navbar-right">
+                    <a class="nav-item nav-link" href="login.html">
+                        <span class="material-icons">login</span> Login
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div
+                class="overview collapse show multi-collapse"
+                id="collapseOverview"
+            >
+                <div class="overview-container">
+                    <!-- heading section -->
+                    <section>
+                        <h1 class="data-head">US Overview</h1>
+                        <h2 class="data-head">as of <span>April 13</span>.</h2>
+                        <div class="data-cd">
+                            <div>
+                                <h3>cases</h3>
+                                <p>71,831</p>
+                            </div>
+                            <div>
+                                <h3>deaths</h3>
+                                <p>6,798</p>
+                            </div>
+                        </div>
+                        <div class="slider">
+                            <img
+                                src="./img/time-slider.png"
+                                alt="time slider"
+                            />
+                        </div>
+                    </section>
+                    <!-- interactive map section -->
+                    <section>
+                        <img class="us-map" src="./img/us.svg" alt="US Map" />
+                    </section>
+                </div>
+                <img src="./img/scale.png" alt="scale" />
+            </div>
+            <div
+                class="dashboard collapse multi-collapse"
+                id="collapseDashboard"
+            >
+                <div class="dashboard-container">
+                    <section>
+                        <h1>Washington</h1>
+                        <h2>as of <span>April 13</span>.</h2>
+                        <div class="data-cd">
+                            <div>
+                                <h3>cases</h3>
+                                <p>1,831</p>
+                            </div>
+                            <div>
+                                <h3>deaths</h3>
+                                <p>798</p>
+                            </div>
+                        </div>
+                        <div class="slider">
+                            <img
+                                src="./img/time-slider.png"
+                                alt="time slider"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <img class="wa-map" src="./img/WA.svg" alt="WA Map" />
+                    </section>
+                </div>
+                <img
+                    class="trend d-sm-none"
+                    src="./img/trend-mobile.svg"
+                    alt="Cases Trend Mobile"
+                />
+                <img
+                    class="trend d-none d-sm-block"
+                    src="./img/trend.svg"
+                    alt="Cases Trend"
+                />
+                <img class="rate" src="./img/rate.svg" alt="Vaccination Rate" />
+            </div>
+        </main>
+        <div class="view-control">
+            <div>
+                <a class="nav-link" href="index.html"
+                    ><i class="fas fa-globe-americas"></i
+                ></a>
+            </div>
+            <div>
+                <a class="nav-link" href="#"
+                    ><i class="fas fa-sliders-h"></i
+                ></a>
             </div>
         </div>
-    </nav>
-    <main>
-        <div class="overview collapse show multi-collapse" id="collapseOverview">
-            <div class="overview-container">
-                <!-- heading section -->
-                <section>
-                    <h1>US Overview</h1>
-                    <h2>as of <span>April 13</span>.</h2>
-                    <div class="data-cd">
-                        <div>
-                            <h3>cases</h3>
-                            <p>71,831</p>
-                        </div>
-                        <div>
-                            <h3>deaths</h3>
-                            <p>6,798</p>
-                        </div>
-                    </div>
-                    <div class="slider"><img src="./img/time-slider.png" alt="time slider"></div>
-                </section>
-                <!-- interactive map section -->
-                <section>
-                    <img class="us-map" src="./img/us.svg" alt="US Map">
-                </section>
-            </div>
-            <img src="./img/scale.png" alt="scale">
-        </div>
-        <div class="dashboard collapse multi-collapse" id="collapseDashboard">
-            <div class="dashboard-container">
-                <section>
-                    <h1>Washington</h1>
-                    <h2>as of <span>April 13</span>.</h2>
-                    <div class="data-cd">
-                        <div>
-                            <h3>cases</h3>
-                            <p>1,831</p>
-                        </div>
-                        <div>
-                            <h3>deaths</h3>
-                            <p>798</p>
-                        </div>
-                    </div>
-                    <div class="slider"><img src="./img/time-slider.png" alt="time slider"></div>
-                </section>
-                <section>
-                    <img class="wa-map" src="./img/WA.svg" alt="WA Map">
-                </section>
-            </div>
-            <img class="trend d-sm-none" src="./img/trend-mobile.svg" alt="Cases Trend Mobile">
-            <img class="trend d-none d-sm-block" src="./img/trend.svg" alt="Cases Trend">
-            <img class="rate" src="./img/rate.svg" alt="Vaccination Rate">
-        </div>
-    </main>    
-    <footer>
-        <div>
-            <a class="nav-link" href="index.html"><i class="fas fa-globe-americas"></i></a>
-        </div>
-        <div>
-            <a class="nav-link" href="#"><i class="fas fa-sliders-h"></i></a>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-
+        <footer>
+            
+        </footer>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+    ></script>
 </html>

@@ -27,15 +27,19 @@ h1 {
     font-size: 41px;
 }
 
-h1, h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-}
-
 h2 {
     font-size: 24px;
     font-weight: 400;
     margin: 0;
+}
+
+h2 span {
+    font-weight: 700;
+    color: #EF4444;
+}
+
+.data-head {
+    color: white;
 }
 
 a {
@@ -47,10 +51,6 @@ p {
     margin: 0;
 }
 
-h2 span {
-    font-weight: 700;
-    color: #EF4444;
-}
 
 .us-map, .trend, .rate {
     display: block;
@@ -93,7 +93,7 @@ h2 span {
     font-size: 41px;
 }
 
-footer {
+.view-control {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -105,7 +105,7 @@ footer {
 }
 
 
-footer a {
+.view-control a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,18 +115,18 @@ footer a {
     border-bottom: transparent solid 3px;
 }
 
-footer i {
+.view-control i {
     position: relative;
     bottom: 5px;
 }
 
-footer div:first-child a {
+.view-control div:first-child a {
     font-size: 30px;
     color: #EF4444;
     border-color: #EF4444;
 }
 
-footer div:last-child a {
+.view-control div:last-child a {
     font-size: 30px;
     color: #9b9292;
 }
@@ -146,7 +146,7 @@ footer div:last-child a {
         height: 100%;
     }
 
-    footer {
+    .view-control {
         display: none;
     }
 
