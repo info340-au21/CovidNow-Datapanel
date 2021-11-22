@@ -25,7 +25,7 @@ export function NavBar() {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClass="active" exact to="/">Overview</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" exact to="/">Overview</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink
@@ -36,16 +36,16 @@ export function NavBar() {
                             role="button"
                             aria-expanded="false"
                             aria-controls=".multi-collapse"
-                            activeClass="active"
+                            activeClassName="active"
                             to="/dashboard"
                             >Dashboard</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" activeClass="active" to="/about">About Us</NavLink>
+                        <NavLink className="nav-link" activeClassName="active" to="/about">About Us</NavLink>
                     </li>
                 </ul>
                 <div className="nav navbar-nav navbar-right">
-                    <NavLink className="nav-item nav-link" activeClass="active" to="/login">
+                    <NavLink className="nav-item nav-link" activeClassName="active" to="/login">
                         <span className="material-icons">login</span> Login
                     </NavLink>
                 </div>
