@@ -49,3 +49,20 @@ main {
 .material-icons {
     vertical-align: middle;
 }
+
+footer {
+    background-color: var(--second-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+
+footer p {
+    text-align: center;
+    margin: 0;
+}
+
+footer a {
+    color: white;
+}
