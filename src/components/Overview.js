@@ -1,6 +1,9 @@
 import React from "react";
 
-export function Overview() {
+export function Overview(props) {
+
+  let data = props.data;
+  
   return (
     <div className="overview collapse show multi-collapse" id="collapseOverview">
       <div className="overview-container">
@@ -12,11 +15,11 @@ export function Overview() {
           <div className="data-cd">
             <div>
               <h3>cases</h3>
-              <p>71,831</p>
+              <p>{data.cases}</p>
             </div>
             <div>
               <h3>deaths</h3>
-              <p>6,798</p>
+              <p>{data.deaths}</p>
             </div>
           </div>
           <div className="slider">

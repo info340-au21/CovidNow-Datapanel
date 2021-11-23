@@ -5,8 +5,13 @@ import '../style.css';
 import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
 
+import SAMPLE_DATA from '../data/covidStats.json';
+
 
 export default function App() {
+
+  const dataSamp = SAMPLE_DATA;
+
   return (
     <div>
       <header>
@@ -16,7 +21,8 @@ export default function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <Overview />
+            <Overview data={dataSamp}/>
+            {console.log(dataSamp)}
           </Route>
 
           <Route path="/dashboard">
