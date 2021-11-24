@@ -1,33 +1,12 @@
 import React from "react";
+import { Stats } from "./Stats";
 
 export function Dashboard(props) {
+    let data = props.data.WA;
+
     return (
         <div className="dashboard">
-            <div className="dashboard-container">
-                <section>
-                    <h1 className="data-head">Washington</h1>
-                    <h2 className="data-head">as of <span>April 13</span>.</h2>
-                    <div className="data-cd">
-                        <div>
-                            <h3>cases</h3>
-                            <p>1,831</p>
-                        </div>
-                        <div>
-                            <h3>deaths</h3>
-                            <p>798</p>
-                        </div>
-                    </div>
-                    <div className="slider">
-                        <img
-                            src="./img/time-slider.png"
-                            alt="time slider"
-                        />
-                    </div>
-                </section>
-                <section>
-                    <img className="wa-map" src="./img/WA.svg" alt="WA Map" />
-                </section>
-            </div>
+            <Stats type="dashboard" state={data} />
             <img
                     className="trend d-sm-none"
                     src="./img/trend-mobile.svg"

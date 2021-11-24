@@ -1,5 +1,4 @@
 {
-    "cases": "71,831",
-    "deaths": "6,798"
-
+    "US": {"name": "US Overview", "state" : "US", "cases" : "71,831", "deaths" : "6,798", "date" : "April 13"},
+    "WA": {"name": "Washington", "state" : "WA", "cases" : "1,831", "deaths" : "798", "date" : "April 13"}
 }

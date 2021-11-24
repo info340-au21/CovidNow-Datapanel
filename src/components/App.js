@@ -22,12 +22,12 @@ export default function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <Overview data={dataSamp}/>
+            <Overview data={dataSamp} />
             {console.log(dataSamp)}
           </Route>
 
           <Route path="/dashboard">
-            <Dashboard />
+            <Dashboard data={dataSamp} />
           </Route>
 
           <Route path="/about">
