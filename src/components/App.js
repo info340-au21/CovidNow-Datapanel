@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavBar } from './Nav';
 import { Overview } from "./Overview";
+import { Dashboard } from './Dashboard';
 import '../style.css';
 import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
@@ -26,7 +27,7 @@ export default function App() {
           </Route>
 
           <Route path="/dashboard">
-            
+            <Dashboard />
           </Route>
 
           <Route path="/about">

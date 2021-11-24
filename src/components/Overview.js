@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 
 export function Overview(props) {
 
   let data = props.data;
   
   return (
-    <div className="overview collapse show multi-collapse" id="collapseOverview">
+    <div className="overview">
       <div className="overview-container">
         <section>
           <h1 className="data-head">US Overview</h1>
@@ -27,16 +28,9 @@ export function Overview(props) {
           </div>
         </section>
         <section>
-          <a
-            className="nav-link"
-            data-toggle="collapse"
-            data-target=".multi-collapse"
-            href="#collapseDashboard"
-            role="button"
-            aria-expanded="false"
-            aria-controls=".multi-collapse">
+          <NavLink className="nav-link" to="/dashboard">
             <img className="us-map" src="./img/us.svg" alt="US Map" />
-          </a>
+          </NavLink>
         </section>
       </div>
       <img src="./img/scale.png" alt="scale" />

@@ -30,12 +30,6 @@ export function NavBar() {
                     <li className="nav-item">
                         <NavLink
                             className="nav-link"
-                            data-toggle="collapse"
-                            data-target=".multi-collapse"
-                            href="#collapseDashboard"
-                            role="button"
-                            aria-expanded="false"
-                            aria-controls=".multi-collapse"
                             activeClassName="active"
                             to="/dashboard"
                             >Dashboard</NavLink>
