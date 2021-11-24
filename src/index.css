@@ -134,6 +134,28 @@ p {
     display: none;
 }
 
+.aboutUs-img img{
+    display: none;
+}
+
+.description{
+    margin-bottom: 4rem;
+}
+
+.description:last-child {
+    margin-bottom: 100px;
+}
+
+.description a {
+    color: white;
+    text-decoration: none;
+}
+
+.description a:hover {
+    color: #f0f0f0;
+    border-bottom: 0.1rem #f0f0f0;
+}
+
 @media  (min-width: 992px) {
     body {
         height: calc(100% - 62px);
@@ -224,5 +246,13 @@ p {
 
     .rate {
         max-width:50%;
+    }
+
+    .aboutUs-img img{
+        display: block;
+        margin: auto;
+        width: 70%;
+        margin-bottom: 9rem;
+        border-radius: 10px;
     }
 }

@@ -1,6 +1,9 @@
 import React from "react";
 
-export function Overview() {
+export function Overview(props) {
+
+  let data = props.data;
+  
   return (
     <div className="overview collapse show multi-collapse" id="collapseOverview">
       <div className="overview-container">
@@ -12,15 +15,15 @@ export function Overview() {
           <div className="data-cd">
             <div>
               <h3>cases</h3>
-              <p>71,831</p>
+              <p>{data.cases}</p>
             </div>
             <div>
               <h3>deaths</h3>
-              <p>6,798</p>
+              <p>{data.deaths}</p>
             </div>
           </div>
           <div className="slider">
-            <img src={require("../img/time-slider.png")} alt="time slider" />
+            <img src="./img/time-slider.png" alt="time slider" />
           </div>
         </section>
         <section>
@@ -32,11 +35,11 @@ export function Overview() {
             role="button"
             aria-expanded="false"
             aria-controls=".multi-collapse">
-            <img className="us-map" src={require("../img/us.svg")} alt="US Map" />
+            <img className="us-map" src="./img/us.svg" alt="US Map" />
           </a>
         </section>
       </div>
-      <img src={require("../img/scale.png")} alt="scale" />
+      <img src="./img/scale.png" alt="scale" />
     </div>
   );
 }
