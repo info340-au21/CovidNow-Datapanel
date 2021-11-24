@@ -3,6 +3,7 @@ import { NavBar } from './Nav';
 import { Overview } from "./Overview";
 import { Dashboard } from './Dashboard';
 import { AboutUs } from "./About";
+import { Login } from "./Login";
 import '../style.css';
 import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
@@ -36,7 +37,7 @@ export default function App() {
           </Route>
 
           <Route path="/login">
-            
+            <Login />
           </Route>
 
           <Redirect to="/"/>
