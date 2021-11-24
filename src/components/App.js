@@ -25,7 +25,6 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Overview data={dataSamp} />
-            {console.log(dataSamp)}
           </Route>
 
           <Route path="/dashboard">

@@ -93,10 +93,10 @@ const TheContact = () => {
         <div className="description">
             <h3>Contact Us</h3>
             <ul className="ml-5">
-                    <li><a href = "mailto:danellf@uw.edu"><span class="material-icons">email</span> DANELL FORBES</a></li>
-                    <li><a href = "mailto:jinwoo11@uw.edu"><span class="material-icons">email</span> JINWOO KIM</a></li>
-                    <li><a href = "mailto:rkoka@uw.edu"><span class="material-icons">email</span> RATIK KOKA</a></li>
-                    <li><a href = "mailto:swang45@uw.edu"><span class="material-icons">email</span> WILLIAM WANG</a></li>
+                    <li><a href = "mailto:danellf@uw.edu"><span className="material-icons">email</span> DANELL FORBES</a></li>
+                    <li><a href = "mailto:jinwoo11@uw.edu"><span className="material-icons">email</span> JINWOO KIM</a></li>
+                    <li><a href = "mailto:rkoka@uw.edu"><span className="material-icons">email</span> RATIK KOKA</a></li>
+                    <li><a href = "mailto:swang45@uw.edu"><span className="material-icons">email</span> WILLIAM WANG</a></li>
             </ul>
         </div>
     )
