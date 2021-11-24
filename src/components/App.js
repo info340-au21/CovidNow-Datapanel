@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavBar } from './Nav';
 import { Overview } from "./Overview";
+import { AboutUs } from "./About";
 import '../style.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
 
@@ -23,7 +24,7 @@ export default function App() {
           </Route>
 
           <Route path="/about">
-            
+            <AboutUs />
           </Route>
 
           <Route path="/login">
