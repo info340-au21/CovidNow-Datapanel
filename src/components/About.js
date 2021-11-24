@@ -12,8 +12,8 @@ export function AboutUs() {
                 <TheContact />
             </section>
             <section className="col-4 aboutUs-img">
-                <img src="../img/Newspic.png" alt="News Icon" />
-                <img src="../img/Peoplepic.png" alt="Users Icon" />
+                <img src="../img/NewsPic.png" alt="News Icon" />
+                <img src="../img/PeoplePic.png" alt="Users Icon" />
                 <img src="../img/CovidTrendPic.png" alt="Trend Icon" />
             </section>
         </div>
