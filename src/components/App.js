@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavBar } from './Nav';
 import { Overview } from "./Overview";
+import { Dashboard } from './Dashboard';
 import { AboutUs } from "./About";
 import '../style.css';
 import '../index.css';
@@ -22,12 +23,12 @@ export default function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <Overview data={dataSamp}/>
+            <Overview data={dataSamp} />
             {console.log(dataSamp)}
           </Route>
 
           <Route path="/dashboard">
-            
+            <Dashboard data={dataSamp} />
           </Route>
 
           <Route path="/about">

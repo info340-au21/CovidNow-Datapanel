@@ -1,44 +1,13 @@
 import React from "react";
+import { Stats } from "./Stats";
 
 export function Overview(props) {
 
-  let data = props.data;
+  let data = props.data.US;
   
   return (
-    <div className="overview collapse show multi-collapse" id="collapseOverview">
-      <div className="overview-container">
-        <section>
-          <h1 className="data-head">US Overview</h1>
-          <h2 className="data-head">
-            as of <span>April 13</span>.
-          </h2>
-          <div className="data-cd">
-            <div>
-              <h3>cases</h3>
-              <p>{data.cases}</p>
-            </div>
-            <div>
-              <h3>deaths</h3>
-              <p>{data.deaths}</p>
-            </div>
-          </div>
-          <div className="slider">
-            <img src="./img/time-slider.png" alt="time slider" />
-          </div>
-        </section>
-        <section>
-          <a
-            className="nav-link"
-            data-toggle="collapse"
-            data-target=".multi-collapse"
-            href="#collapseDashboard"
-            role="button"
-            aria-expanded="false"
-            aria-controls=".multi-collapse">
-            <img className="us-map" src="./img/us.svg" alt="US Map" />
-          </a>
-        </section>
-      </div>
+    <div className="overview">
+      <Stats type="overview" state={data} />
       <img src="./img/scale.png" alt="scale" />
     </div>
   );
