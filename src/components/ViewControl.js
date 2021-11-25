@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export function ViewControl() {
+import { withRouter } from "react-router-dom";
+export function ViewControlToHide(props) {
+  const { location } = props;
+  if (location.pathname.match("/about") || location.pathname.match("/login")) {
+    return null;
+  }
+
+  return <ViewControlContent />;
+};
+
+export const ViewControl = withRouter(ViewControlToHide);
+
+
+function ViewControlContent() {
   const [isHome, setIsHome] = useState(true);
 
   return (
