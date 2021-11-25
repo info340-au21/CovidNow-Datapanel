@@ -51,10 +51,13 @@ main {
 
 footer {
     background-color: var(--second-color);
+    position: fixed;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60px;
+    width: 100%;
 }
 
 footer p {
