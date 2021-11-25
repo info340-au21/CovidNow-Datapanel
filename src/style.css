@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 :root {
     --first-color: #2F3136;
     --second-color: #EC4444;
@@ -23,7 +27,6 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
 }
 
 p {

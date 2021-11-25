@@ -23,7 +23,7 @@ export function Stats(props) {
                     <img src="./img/time-slider.png" alt="time slider" />
                 </div>
             </section>
-            <section>
+            <section id={state.state}>
                 <img className={state.state.toLowerCase() + "-map"} src={"./img/" + state.state + ".svg"} alt={state.state + " Map"} />
             </section>
         </div>

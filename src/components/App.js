@@ -4,6 +4,7 @@ import { Overview } from "./Overview";
 import { Dashboard } from './Dashboard';
 import { AboutUs } from "./About";
 import { Login } from "./Login";
+import { ViewControl } from './ViewControl.js';
 import '../style.css';
 import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
@@ -39,16 +40,17 @@ export default function App() {
             <Login />
           </Route>
 
-          <Redirect to="/"/>
+          <Redirect to="/" />
         </Switch>
       </main>
 
-      <footer className="fixed-bottom">
-            <p className="copyright-text">
-                Copyright &copy; 2021 All Rights Reserved by
-                <NavLink to="/about"> Data Panel Project Team Members</NavLink>.
-            </p>
-        </footer>
+      <footer>
+        <p className="copyright-text">
+          Copyright &copy; 2021 All Rights Reserved by
+          <NavLink to="/about"> Data Panel Project Team Members</NavLink>.
+        </p>
+      </footer>
+      <ViewControl />
     </div>
   );
 }

@@ -119,15 +119,15 @@ p {
     bottom: 5px;
 }
 
-.view-control div:first-child a {
-    font-size: 30px;
+.view-control div .on {
     color: #EF4444;
     border-color: #EF4444;
 }
 
-.view-control div:last-child a {
+.view-control div a {
     font-size: 30px;
     color: #9b9292;
+    text-decoration: none;
 }
 
 .wa-map {
@@ -221,8 +221,14 @@ p {
     }
 
     .overview-container section:first-child + section, .dashboard-container section:first-child + section {
+        overflow: none;
+        display: flex;
         height: 363px;
         width: 75%;
+    }
+
+    #US {
+        height: calc(100vh - 152px);
     }
 
     .overview-container section:first-child + section img, .dashboard-container section:first-child + section img {
