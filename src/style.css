@@ -2,11 +2,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
 :root {
     --first-color: #2F3136;
     --second-color: #EC4444;

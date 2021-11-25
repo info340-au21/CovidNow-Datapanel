@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    height: 100%;
+    height: calc(100% + 60px);
     margin: 62px 0;
 }
 
@@ -224,7 +224,7 @@ p {
     }
 
     #US {
-        height: calc(100vh - 152px);
+        height: calc(100vh - 122px);
     }
 
     .overview-container section:first-child + section img, .dashboard-container section:first-child + section img {
