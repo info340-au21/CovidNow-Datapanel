@@ -68,3 +68,14 @@ footer p {
 footer a {
     color: white;
 }
+
+.widget {
+    background-color: #3f3c41;
+    border-radius: 30px;
+    padding: 1.5rem;
+}
+
+.widget h2 {
+    font-weight: 600;
+    color: white;
+}
