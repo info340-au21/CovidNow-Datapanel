@@ -51,7 +51,6 @@ main {
 
 footer {
     background-color: var(--second-color);
-    position: fixed;
     bottom: 0;
     display: flex;
     justify-content: center;
