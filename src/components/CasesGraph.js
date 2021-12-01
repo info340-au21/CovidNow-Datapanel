@@ -20,11 +20,16 @@ export function CasesGraph(props) {
                         ],
                         borderColor: "red",
                         fill: false,
-                    }
+                        tension: 0.5,
+                    },
                 ],
             }}
             options={{
-                legend: { display: false }
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                },
             }}
         />
     );
