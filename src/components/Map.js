@@ -3,6 +3,7 @@ import {useState, useCallback} from 'react';
 import { useHistory } from 'react-router';
 import MapGL, {Source, Layer} from 'react-map-gl';
 
+
 const MAPBOX_TOKEN = 'pk.eyJ1Ijoicmtva2EiLCJhIjoiY2t3bG01eHR5MjM1NzJvbXA3MzJzd2hoZiJ9.YAGNzuhJcaNl-0LkKI_ARw';
 
 export default function Map(props) {
