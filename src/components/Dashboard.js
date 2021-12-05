@@ -61,6 +61,5 @@ export function Dashboard() {
                 />
             <img className="rate" src="../img/rate.svg" alt="Vaccination Rate" />
         </div>
-                
     );
 }
