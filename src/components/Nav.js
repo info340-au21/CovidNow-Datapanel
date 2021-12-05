@@ -6,7 +6,7 @@ export function NavBar() {
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
             <NavLink className="navbar-brand" exact to="/">
                 <img
-                    src="./img/logo.svg"
+                    src="../img/logo.svg"
                     className="d-inline-block align-top"
                     alt="Database Logo"
                 />
@@ -31,7 +31,7 @@ export function NavBar() {
                         <NavLink
                             className="nav-link"
                             activeClassName="active"
-                            to="/dashboard"
+                            to="/dashboard/last"
                             >Dashboard</NavLink>
                     </li>
                     <li className="nav-item">

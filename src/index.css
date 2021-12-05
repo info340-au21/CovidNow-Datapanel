@@ -85,7 +85,7 @@ p {
 
 .data-cd p {
     font-weight: 500;
-    font-size: 41px;
+    font-size: 32px;
 }
 
 .view-control {
@@ -151,6 +151,18 @@ p {
     color: #f0f0f0;
     border-bottom: 0.1rem #f0f0f0;
 }
+
+.hoverStat {
+    position: absolute;
+    margin: 8px;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    max-width: 300px;
+    font-size: 10px;
+    z-index: 9;
+    pointer-events: none;
+  }
 
 @media  (min-width: 992px) {
     body {
