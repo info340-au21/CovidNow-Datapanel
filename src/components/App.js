@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { NavBar } from './Nav';
 import { Overview } from "./Overview";
 import { Dashboard } from './Dashboard';
@@ -8,11 +8,8 @@ import { ViewControl } from './ViewControl.js';
 import '../style.css';
 import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
-
-
 import { useQuery } from "react-query";
 
-import SAMPLE_DATA from '../data/covidStats.json';
 import { updateData } from './utils';
 import states from '../data/us-states.json';
 
@@ -22,7 +19,6 @@ const US_URL = "https://api.covidactnow.org/v2/country/US.json?apiKey=f98006b9d2
 
 
 export default function App() {
-  const dataSamp = SAMPLE_DATA;
 
   let [covidData, setData] = useState(states);
 

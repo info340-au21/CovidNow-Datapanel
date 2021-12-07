@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useHistory, useParams } from 'react-router';
 
 export function Dashboard() {
@@ -7,13 +7,13 @@ export function Dashboard() {
     let state = {cases: " ", deaths: " ", state: ""};
     let date = new Date();
 
-    if (useParams().params != "last") {
+    if (useParams().params !== "last") {
         state = history.location.state.stateData;
         date = new Date(state.date);
         localStorage.setItem("state", JSON.stringify(state));
     } else {
         state = JSON.parse(localStorage.getItem("state"));
-        if ("state" == null) {
+        if ("state" === null) {
             return (
                 <div className="dashboard">
                     <span>No History Exists</span>
