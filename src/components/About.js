@@ -2,11 +2,11 @@ import React from "react";
 
 export function AboutUs() {
     return ( 
-        <div className="row">
+        <div className="row pt-5">
             <section className="col-lg">
                 <ProblemDesc />
                 <TheWho />
-                <TheSource />
+                {/* <TheSource /> */}
                 <TheInteraction />
                 <TheSolution />
                 <TheContact />
