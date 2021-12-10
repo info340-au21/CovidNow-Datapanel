@@ -2,7 +2,7 @@ import React from "react";
 import "../login.css";
 
 import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth'
-import { StyledFirebaseAuth } from "react-firebaseui/StyledFirebaseAuth";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
 const firebaseUIConfig = {
   signInOptions: [
@@ -19,10 +19,8 @@ const firebaseUIConfig = {
 }
 
 export function Login() {
-  const auth = getAuth();
   return (
     <div>
-      <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
       <LeftFlex />
       <RightFlex />
     </div>
@@ -58,11 +56,13 @@ const LoginForm = () => {
 };
 
 const LeftFlex = () => {
+  const auth = getAuth();
   return (
     <div className="flex-item login-column">
       <h4>WELCOME BACK</h4>
       <h2>Log into your account</h2>
       <LoginForm />
+      <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
     </div>
   );
 };

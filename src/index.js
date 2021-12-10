@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
-import { initializeApp } from "firebase/app";
+import firebase, { initializeApp } from "firebase/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import 'whatwg-fetch';
-//import { firebase, initalizeApp } from 'firebase/app'
 
 const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
 
