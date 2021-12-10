@@ -1,10 +1,11 @@
 import React from "react";
 import { useHistory, useParams } from 'react-router';
+import CreateSVG from "./CreateSVG";
 
 export function Dashboard() {
 
     let history = useHistory();
-    let state = {cases: " ", deaths: " ", state: ""};
+    let state = {cases: " ", deaths: " ", state: "", geo: {}};
     let date = new Date();
 
     if (useParams().params !== "last") {
@@ -45,9 +46,7 @@ export function Dashboard() {
                         <img src="../img/time-slider.png" alt="time slider" />
                     </div>
                 </section>
-                <section id={state.state}>
-                    <img className={state.state.toLowerCase() + "-map"} src={"../img/" + state.state + ".svg"} alt={state.state + " Map"} />
-                </section>
+                <CreateSVG cases={state.cases} geoJson={state.geo} />
             </div>
             <img
                     className="trend d-sm-none"

@@ -60,6 +60,7 @@ export default function Map(props) {
     const onClick = useCallback(event => {
         const { features } = event;
         const clickedFeature = features && features[0];
+        console.log(event);
         if (clickedFeature && !clickedFeature.properties.class ) {
             history.push("/dashboard/" + clickedFeature.properties.state, {stateData: clickedFeature.properties});
         }

@@ -13,7 +13,8 @@ export function updateData(featureCollection, data) {
             state,
             cases,
             deaths,
-            date
+            date,
+            geo: f
         };
         return {...f, properties};
         })

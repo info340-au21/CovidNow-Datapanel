@@ -126,7 +126,7 @@ p {
     text-decoration: none;
 }
 
-.wa-map {
+#stateSVG {
     display: none;
 }
 
@@ -248,7 +248,7 @@ p {
         bottom: 50px;
     }
 
-    .wa-map {
+    #stateSVG {
         display: block;
         position: relative;
         top: 50%;
