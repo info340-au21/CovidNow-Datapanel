@@ -1,9 +1,28 @@
 import React from "react";
 import "../login.css";
 
+import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth'
+import { StyledFirebaseAuth } from "react-firebaseui/StyledFirebaseAuth";
+
+const firebaseUIConfig = {
+  signInOptions: [
+    {provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true},
+    GoogleAuthProvider.PROVIDER_ID,
+  ],
+  signInFlow: 'popup', //don't redirect to authenticate
+  credentialHelper: 'none',
+  callbacks: {
+    signInSuccessWithAuthResult: () => {
+      return false; //don't redirect on your own
+    }
+  }
+}
+
 export function Login() {
+  const auth = getAuth();
   return (
-    <div className="container">
+    <div>
+      <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
       <LeftFlex />
       <RightFlex />
     </div>
