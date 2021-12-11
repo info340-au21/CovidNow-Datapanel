@@ -51,7 +51,7 @@ export function Dashboard() {
             </div>
             <div className="widget">
                 <h2>Cases Trend</h2>
-                <CasesGraph />
+                <CasesGraph data={state}/>
             </div>
         </div>
     );

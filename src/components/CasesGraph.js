@@ -4,15 +4,14 @@ import "chart.js/auto";
 import "chartjs-adapter-date-fns";
 
 export default function CasesGraph(props) {
-    // let data = props.data;
-    // console.log(data);
+    let data = props.data;
+    console.log(data);
 
     var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
 
     return (
         <Line
             data={{
-                labels: xValues,
                 datasets: [
                     {
                         data: [

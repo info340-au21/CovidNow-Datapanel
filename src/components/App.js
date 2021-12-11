@@ -9,24 +9,25 @@ import '../style.css';
 import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
 import { useQuery } from "react-query";
+import states from "../data/us-states.json";
+import { updateData } from "./utils";
 
-import { updateData } from './utils';
-import states from '../data/us-states.json';
 
-const COVID_URL = "https://api.covidactnow.org/v2/states.json?apiKey=f98006b9d23d4e88b6df92c4b709a9f6"
+const COVID_URL = "https://api.covidactnow.org/v2/states.timeseries.json?apiKey=f98006b9d23d4e88b6df92c4b709a9f6"
 const US_URL = "https://api.covidactnow.org/v2/country/US.json?apiKey=f98006b9d23d4e88b6df92c4b709a9f6"
 
 
 export default function App() {
 
   let [covidData, setData] = useState(states);
+  console.log(covidData);
 
   useQuery("mapData", () => {
     fetch(COVID_URL)
         .then(function(response) {
             return response.json()
         }).then(function(json) {
-          setData(updateData(states, json))
+          setData(updateData(states, json));
           return getUS();
         }).catch(function(error) {
             console.log(error.message)

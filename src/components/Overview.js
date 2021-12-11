@@ -1,10 +1,11 @@
 import React from "react";
 import Map from "./Map";
+import { useState } from "react";
 
 export function Overview(props) {
   let usData = props.usData;
 
-  let date = new Date(usData.lastUpdatedDate);
+  let date = usData.lastUpdatedDate;
 
   return (
     <div className="overview" >
@@ -12,7 +13,7 @@ export function Overview(props) {
             <section>
                 <h1 className="data-head">US</h1>
                 <h2 className="data-head">
-                    as of <span>{date.toLocaleDateString()}</span>.
+                    as of <span>{date}</span>.
                 </h2>
                 <div className="data-cd">
                     <div>
@@ -29,7 +30,7 @@ export function Overview(props) {
                 </div>
             </section>
             <section id="US">
-                <Map covidData={props.covidData}/>
+                <Map covidData={props.covidData} date={date}/>
             </section>
         </div>
       <img src="../img/scale.png" alt="scale" />
