@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavBar } from './Nav';
 import { Overview } from "./Overview";
 import { Dashboard } from './Dashboard';
@@ -9,7 +9,7 @@ import '../style.css';
 import '../index.css';
 import { Route, Switch, Redirect, NavLink } from 'react-router-dom';
 import { useQuery } from "react-query";
-
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { updateData } from './utils';
 import states from '../data/us-states.json';
 
@@ -20,6 +20,21 @@ const US_URL = "https://api.covidactnow.org/v2/country/US.json?apiKey=f98006b9d2
 export default function App() {
 
   let [covidData, setData] = useState(states);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const auth = getAuth();
+  useEffect(() => {
+    onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        console.log("Logging in ", firebaseUser.displayName);
+        setCurrentUser(firebaseUser);
+      } else {
+        console.log("logging out");
+        setCurrentUser(null);
+      }
+      console.log(firebaseUser);
+    })
+  }, [])
 
   useQuery("mapData", () => {
     fetch(COVID_URL)
@@ -49,17 +64,17 @@ export default function App() {
   return (
     <div>
       <header>
-        <NavBar />
+        <NavBar user={currentUser}/>
       </header>
 
       <main>
         <Switch>
           <Route exact path="/">
-            <Overview usData={usData} covidData={covidData}/>
+            <Overview usData={usData} covidData={covidData} user={currentUser}/>
           </Route>
 
           <Route path="/dashboard/:params">
-            <Dashboard />
+            <Dashboard user={currentUser}/>
           </Route>
 
           <Route path="/about">

@@ -2,12 +2,13 @@ import * as React from 'react';
 import {useState, useCallback} from 'react';
 import { useHistory } from 'react-router';
 import MapGL, {Source, Layer} from 'react-map-gl';
+import { getDatabase, ref, set } from "firebase/database";
 
 
 const MAPBOX_TOKEN = 'pk.eyJ1Ijoicmtva2EiLCJhIjoiY2t3bG01eHR5MjM1NzJvbXA3MzJzd2hoZiJ9.YAGNzuhJcaNl-0LkKI_ARw';
 
 export default function Map(props) {
-
+    const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
 
     const [viewport, setViewport] = useState({
@@ -63,6 +64,16 @@ export default function Map(props) {
         console.log(event);
         if (clickedFeature && !clickedFeature.properties.class ) {
             history.push("/dashboard/" + clickedFeature.properties.state, {stateData: clickedFeature.properties});
+            if (props.user) {
+                console.log("Storing to DB");
+                set(ref(db, 'DefaultState' + props.user.uid), {
+                    userId: props.user.uid,
+                    state: clickedFeature.properties,
+                });
+            } else {
+                console.log("Not logged in!");
+                console.log(props.user);
+            }
         }
     },
     [history]);

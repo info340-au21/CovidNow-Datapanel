@@ -3,7 +3,6 @@ import Map from "./Map";
 
 export function Overview(props) {
   let usData = props.usData;
-
    let date = new Date(usData.lastUpdatedDate);
 
   return (
@@ -29,7 +28,7 @@ export function Overview(props) {
                 </div>
             </section>
             <section id="US">
-                <Map covidData={props.covidData}/>
+                <Map covidData={props.covidData} user={props.user}/>
             </section>
         </div>
       <img src="../img/scale.png" alt="scale" />
