@@ -4,10 +4,6 @@ import { useHistory } from "react-router";
 import MapGL, { Source, Layer } from "react-map-gl";
 import { updateData } from "./utils";
 import states from "../data/us-states.json";
-import * as React from "react";
-import { useState, useCallback } from "react";
-import { useHistory } from "react-router";
-import MapGL, { Source, Layer } from "react-map-gl";
 import { getDatabase, ref, set } from "firebase/database";
 
 const MAPBOX_TOKEN =
