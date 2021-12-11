@@ -4,7 +4,7 @@ import Map from "./Map";
 export function Overview(props) {
   let usData = props.usData;
 
-   let date = new Date(usData.lastUpdatedDate);
+  let date = new Date(usData.lastUpdatedDate);
 
   return (
     <div className="overview" >

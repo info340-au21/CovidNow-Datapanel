@@ -1,10 +1,11 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
+import "chartjs-adapter-date-fns";
 
-export function CasesGraph(props) {
-    let data = props.data;
-    console.log(data);
+export default function CasesGraph(props) {
+    // let data = props.data;
+    // console.log(data);
 
     var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
 
@@ -25,6 +26,14 @@ export function CasesGraph(props) {
                 ],
             }}
             options={{
+                scales: {
+                    x: {
+                        type: "timeseries",
+                        time: {
+                            unit: "month"
+                        }
+                    },
+                },
                 plugins: {
                     legend: {
                         display: false,

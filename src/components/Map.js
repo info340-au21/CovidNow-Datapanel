@@ -37,6 +37,7 @@ export default function Map(props) {
     };
 
     const onHover = useCallback(event => {
+        console.log(event);
         const {
           features,
           offsetCenter: {x, y}

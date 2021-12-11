@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory, useParams } from 'react-router';
 import CreateSVG from "./CreateSVG";
+import CasesGraph from "./CasesGraph";
 
 export function Dashboard() {
 
@@ -48,17 +49,10 @@ export function Dashboard() {
                 </section>
                 <CreateSVG cases={state.cases} geoJson={state.geo} />
             </div>
-            <img
-                    className="trend d-sm-none"
-                    src="../img/trend-mobile.svg"
-                    alt="Cases Trend Mobile"
-                />
-            <img
-                    className="trend d-none d-sm-block"
-                    src="../img/trend.svg"
-                    alt="Cases Trend"
-                />
-            <img className="rate" src="../img/rate.svg" alt="Vaccination Rate" />
+            <div className="widget">
+                <h2>Cases Trend</h2>
+                <CasesGraph />
+            </div>
         </div>
     );
 }
