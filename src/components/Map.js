@@ -4,6 +4,11 @@ import { useHistory } from "react-router";
 import MapGL, { Source, Layer } from "react-map-gl";
 import { updateData } from "./utils";
 import states from "../data/us-states.json";
+import * as React from "react";
+import { useState, useCallback } from "react";
+import { useHistory } from "react-router";
+import MapGL, { Source, Layer } from "react-map-gl";
+import { getDatabase, ref, set } from "firebase/database";
 
 const MAPBOX_TOKEN =
     "pk.eyJ1Ijoicmtva2EiLCJhIjoiY2t3bG01eHR5MjM1NzJvbXA3MzJzd2hoZiJ9.YAGNzuhJcaNl-0LkKI_ARw";
@@ -40,8 +45,9 @@ export default function Map(props) {
         } else {
             return covidData;
         }
-    };
+    }
 
+    const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
 
     const [viewport, setViewport] = useState({
@@ -82,10 +88,10 @@ export default function Map(props) {
         setHoverInfo(
             hoveredFeature
                 ? {
-                      feature: hoveredFeature,
-                      x: x,
-                      y: y,
-                  }
+                    feature: hoveredFeature,
+                    x: x,
+                    y: y,
+                }
                 : null
         );
     }, []);
@@ -101,6 +107,16 @@ export default function Map(props) {
                 history.push("/dashboard/" + clickedFeature.properties.state, {
                     stateData: clickedFeature.properties,
                 });
+                if (props.user) {
+                    console.log("Storing to DB");
+                    set(ref(db, "DefaultState" + props.user.uid), {
+                        userId: props.user.uid,
+                        state: clickedFeature.properties,
+                    });
+                } else {
+                    console.log("Not logged in!");
+                    console.log(props.user);
+                }
             }
         },
         [history]

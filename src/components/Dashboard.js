@@ -1,28 +1,41 @@
 import React from "react";
-import { useHistory, useParams } from 'react-router';
+//import { mapControlDefaultProps } from "react-map-gl/src/components/use-map-control";
+import { useHistory, useParams } from "react-router";
 import CreateSVG from "./CreateSVG";
 import CasesGraph from "./CasesGraph";
+import { getDatabase, ref, onValue } from "firebase/database";
 
-export function Dashboard() {
-
+export function Dashboard(props) {
+    const db = getDatabase();
     let history = useHistory();
-    let state = {cases: " ", deaths: " ", state: "", geo: {}};
+    let state = { cases: " ", deaths: " ", state: "", geo: {} };
     let date = new Date();
+    const lastInfo = useParams().params;
+    if (props.user) {
+        console.log("User is logged in!");
+        const userData = ref(db, "DefaultState" + props.user.uid);
 
-    if (useParams().params !== "last") {
-        state = history.location.state.stateData;
+        onValue(userData, (snapshot) => {
+            state = snapshot.child("state").val();
+        });
         date = new Date(state.date);
-        localStorage.setItem("state", JSON.stringify(state));
     } else {
-        state = JSON.parse(localStorage.getItem("state"));
-        if ("state" === null) {
-            return (
-                <div className="dashboard">
-                    <span>No History Exists</span>
-                </div>
-            )
+        console.log("User is not logged in!");
+        if (lastInfo !== "last") {
+            state = history.location.state.stateData;
+            date = new Date(state.date);
+            localStorage.setItem("state", JSON.stringify(state));
+        } else {
+            state = JSON.parse(localStorage.getItem("state"));
+            if ("state" === null) {
+                return (
+                    <div className="dashboard">
+                        <span>No History Exists</span>
+                    </div>
+                );
+            }
+            date = new Date(state.date);
         }
-        date = new Date(state.date);
     }
 
     return (
@@ -35,12 +48,12 @@ export function Dashboard() {
                     </h2>
                     <div className="data-cd">
                         <div>
-                        <h3>cases</h3>
-                        <p>{state.cases.toLocaleString()}</p>
+                            <h3>cases</h3>
+                            <p>{state.cases.toLocaleString()}</p>
                         </div>
                         <div>
-                        <h3>deaths</h3>
-                        <p>{state.deaths.toLocaleString()}</p>
+                            <h3>deaths</h3>
+                            <p>{state.deaths.toLocaleString()}</p>
                         </div>
                     </div>
                     <div className="slider">
@@ -51,7 +64,7 @@ export function Dashboard() {
             </div>
             <div className="widget">
                 <h2>Cases Trend</h2>
-                <CasesGraph data={state}/>
+                <CasesGraph data={state} />
             </div>
         </div>
     );
