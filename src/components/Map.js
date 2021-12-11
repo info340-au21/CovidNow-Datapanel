@@ -10,24 +10,29 @@ const MAPBOX_TOKEN =
 
 export default function Map(props) {
     let covidData = props.covidData;
-    let date = "2021-12-10";
+    let date = "2021-12-11";
     console.log(covidData);
     function geoJson(covidData) {
-        if (covidData.withData) {
+        console.log(props.lastUpdatedDate);
+        console.log(date === props.lastUpdatedDate);
+        if (covidData.withData && date !== props.lastUpdatedDate) {
             const { features } = covidData;
             return {
                 type: "FeatureCollection",
                 features: features.map((f) => {
                     if (f.data) {
-                        let dataOnSpecificDate = f.data.filter((singleDayData) =>  singleDayData.date === date)[0];
+                        let dataOnSpecificDate = f.data.filter(
+                            (singleDayData) => singleDayData.date === date
+                        )[0];
                         if (dataOnSpecificDate) {
                             let cases = dataOnSpecificDate.cases;
                             let deaths = dataOnSpecificDate.deaths;
                             const properties = {
                                 ...f.properties,
-                                cases, deaths
+                                cases,
+                                deaths,
                             };
-                            return { ...f, properties};
+                            return { ...f, properties };
                         }
                     }
                 }),

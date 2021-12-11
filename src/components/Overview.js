@@ -30,7 +30,7 @@ export function Overview(props) {
                 </div>
             </section>
             <section id="US">
-                <Map covidData={props.covidData} date={date}/>
+                <Map covidData={props.covidData} lastUpdatedDate={usData.lastUpdatedDate} date={date}/>
             </section>
         </div>
       <img src="../img/scale.png" alt="scale" />

@@ -4,16 +4,19 @@ export function updateData(featureCollection, data) {
         type: 'FeatureCollection',
         features: features.map(f => {
         let state = data[f.id].state;
-        let actual = data[f.id].actualsTimeseries;
-        // let cases = actual.cases;
-        // let deaths = actual.deaths;
+        let actualsTimeseries = data[f.id].actualsTimeseries;
+        let actual = data[f.id].actuals;
+        let cases = actual.cases;
+        let deaths = actual.deaths;
         // let date = data[f.id].lastUpdatedDate;
         const properties = {
             ...f.properties,
+            cases,
+            deaths,
             state,
             geo: f
         };
-        return {...f, properties, data: actual};
+        return { ...f, properties, data: actualsTimeseries };
         }),
         withData: true
     };
