@@ -155,6 +155,12 @@ p {
 .description-img img {
     border-radius: 2.5%;
     width: 40%;
+    margin: 20px;
+}
+
+.map-gif img {
+    height: 350px;
+    width: 450px;
 }
 
 .hoverStat {

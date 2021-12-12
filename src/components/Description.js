@@ -24,7 +24,7 @@ export function IntroBanner() {
 
 export function RealTime() {
     return (
-        <div className="mt-5 pb-5">
+        <div className="mt-5 pb-5 description-img">
             <h2>Real Time Data!</h2>
             <p>Our COVID-19 data is provided by an API from Covid Act Now.</p>
             <a href="https://covidactnow.org/" target="_blank"><img src="../img/CovidActNowLogo.png" alt="d" /></a>
@@ -43,9 +43,10 @@ export function OverviewPageDemo() {
     return (
         <div className="mt-5 pb-5 description-img">
             <h2>What's included in our Overview page?</h2>
-            <p>- Left includes a banner with an up-to-date total COVID-19 cases and deaths for USA.</p>
+            <p>-</p>
+            <p>Left includes a banner with an up-to-date total COVID-19 cases and deaths for USA.</p>
             <img src="../img/OverviewLeftBanner.png" alt="d" />
-            <p>- Right includes a state map with a functioning interactive map that shows various COVID-19 data for each state.</p>
+            <p>Right includes a state map with a functioning interactive map that shows various COVID-19 data for each state.</p>
             <img src="../img/OverviewRightBanner.png" alt="d" />
         </div>
     )
@@ -62,6 +63,12 @@ export function InteractiveMap() {
             <p>-</p>
             <p>A library for building customizable, user-interactive map for web applications.</p>
             <p>Thanks to Mapbox, we are able to easily visualize our COVID-19 for each states.</p>
+            <div className="map-gif">
+                <img src="../img/movement.gif" alt="s" />
+                <img src="../img/statehover.gif" alt="s" />
+            </div>
+            {/* <img src="../img/movement.gif" alt="s" />
+            <img src="../img/statehover.gif" alt="s" /> */}
         </div>
     )
 }
