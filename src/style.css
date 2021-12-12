@@ -69,6 +69,7 @@ footer a {
 }
 
 .widget {
+    max-width: 1000px;
     background-color: #3f3c41;
     border-radius: 30px;
     padding: 1.5rem;
@@ -77,4 +78,5 @@ footer a {
 .widget h2 {
     font-weight: 600;
     color: white;
+    margin-bottom: 20px;
 }
