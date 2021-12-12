@@ -5,7 +5,8 @@ import { useState } from "react";
 export function Overview(props) {
   let usData = props.usData;
 
-  let date = usData.lastUpdatedDate;
+  let date = "2021-12-11";
+  let lastUpdatedDate = usData.lastUpdatedDate;
 
   return (
       <div className="overview">
@@ -33,7 +34,7 @@ export function Overview(props) {
                   <Map
                       covidData={props.covidData}
                       user={props.user}
-                      lastUpdatedDate={usData.lastUpdatedDate}
+                      lastUpdatedDate={lastUpdatedDate}
                       date={date}
                   />
               </section>
