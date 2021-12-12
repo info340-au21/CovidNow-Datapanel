@@ -49,23 +49,23 @@ const TheWho = () => {
      );
 }
 
-const TheSource = () => {
-    return ( 
-        <div className="details">
-            <h3>What kind of information will the users be viewing?</h3>
-            <p>
-                An interactive geographic map of the US will be 
-                presented to the users to navigate information visually, including:
-            </p>
-            <p>( click on the list item to view the sources )</p>
-            <ul className="p-3 pl-5">
-                <li><a href="https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36">CASE NUMBERS</a></li>
-                <li><a href="https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-Jurisdi/unsk-b7fc">VACCINATION RATES</a></li>
-            </ul>
+// const TheSource = () => {
+//     return ( 
+//         <div className="details">
+//             <h3>What kind of information will the users be viewing?</h3>
+//             <p>
+//                 An interactive geographic map of the US will be 
+//                 presented to the users to navigate information visually, including:
+//             </p>
+//             <p>( click on the list item to view the sources )</p>
+//             <ul className="p-3 pl-5">
+//                 <li><a href="https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36">CASE NUMBERS</a></li>
+//                 <li><a href="https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-Jurisdi/unsk-b7fc">VACCINATION RATES</a></li>
+//             </ul>
             
-        </div>
-     );
-}
+//         </div>
+//      );
+// }
 
 const TheInteraction = () => {
     return ( 
