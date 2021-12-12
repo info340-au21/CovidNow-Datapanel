@@ -35,6 +35,9 @@ export function NavBar() {
                             >Dashboard</NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/description">Description</NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/about">About Us</NavLink>
                     </li>
                 </ul>

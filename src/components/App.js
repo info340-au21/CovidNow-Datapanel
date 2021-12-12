@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavBar } from './Nav';
 import { Overview } from "./Overview";
 import { Dashboard } from './Dashboard';
+import { Description } from './Description';
 import { AboutUs } from "./About";
 import { Login } from "./Login";
 import { ViewControl } from './ViewControl.js';
@@ -60,6 +61,10 @@ export default function App() {
 
           <Route path="/dashboard/:params">
             <Dashboard />
+          </Route>
+
+          <Route path="/description">
+            <Description/>
           </Route>
 
           <Route path="/about">

@@ -134,22 +134,27 @@ p {
     display: none;
 }
 
-.description{
+.details{
     margin-bottom: 4rem;
 }
 
-.description:last-child {
+.details:last-child {
     margin-bottom: 100px;
 }
 
-.description a {
+.details a {
     color: white;
     text-decoration: none;
 }
 
-.description a:hover {
+.details a:hover {
     color: #f0f0f0;
     border-bottom: 0.1rem #f0f0f0;
+}
+
+.description-img img {
+    border-radius: 2.5%;
+    width: 40%;
 }
 
 .hoverStat {
