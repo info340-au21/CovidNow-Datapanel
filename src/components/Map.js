@@ -11,12 +11,13 @@ const MAPBOX_TOKEN =
 
 export default function Map(props) {
     let covidData = props.covidData;
-    let date = "2021-12-11";
+    let date = props.date;
     console.log(covidData);
     function geoJson(covidData) {
-        console.log(props.lastUpdatedDate);
-        console.log(date === props.lastUpdatedDate);
-        if (covidData.withData && date !== props.lastUpdatedDate) {
+        if (
+            covidData.withData &&
+            date !== props.lastUpdatedDate
+        ) {
             const { features } = covidData;
             return {
                 type: "FeatureCollection",
@@ -32,6 +33,7 @@ export default function Map(props) {
                                 ...f.properties,
                                 cases,
                                 deaths,
+                                date,
                             };
                             return { ...f, properties };
                         }
@@ -42,6 +44,8 @@ export default function Map(props) {
             return covidData;
         }
     }
+
+    console.log(geoJson(covidData));
 
     const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
@@ -101,7 +105,7 @@ export default function Map(props) {
             console.log(event);
             if (clickedFeature && !clickedFeature.properties.class) {
                 history.push("/dashboard/" + clickedFeature.properties.state, {
-                    stateData: clickedFeature.properties,
+                    stateData: clickedFeature.properties
                 });
                 if (props.user) {
                     console.log("Storing to DB");
@@ -138,6 +142,7 @@ export default function Map(props) {
                     <div>State: {hoverInfo.feature.properties.name}</div>
                     <div>Cases: {hoverInfo.feature.properties.cases}</div>
                     <div>Deaths: {hoverInfo.feature.properties.deaths}</div>
+                    <div>date: {hoverInfo.feature.properties.date}</div>
                 </div>
             )}
         </MapGL>
