@@ -138,22 +138,33 @@ p {
     display: none;
 }
 
-.description{
+.details{
     margin-bottom: 4rem;
 }
 
-.description:last-child {
+.details:last-child {
     margin-bottom: 100px;
 }
 
-.description a {
+.details a {
     color: white;
     text-decoration: none;
 }
 
-.description a:hover {
+.details a:hover {
     color: #f0f0f0;
     border-bottom: 0.1rem #f0f0f0;
+}
+
+.description-img img {
+    border-radius: 2.5%;
+    width: 40%;
+    margin: 20px;
+}
+
+.map-gif img {
+    height: 350px;
+    width: 450px;
 }
 
 .hoverStat {
@@ -270,7 +281,14 @@ p {
         display: block;
         margin: auto;
         width: 70%;
-        margin-bottom: 9rem;
+        margin-bottom: 20rem;
         border-radius: 10px;
+    }
+}
+
+@media  (min-width: 1328px) {
+    .aboutUs-img img{
+        width: 60%;
+        margin-bottom: 6rem;
     }
 }

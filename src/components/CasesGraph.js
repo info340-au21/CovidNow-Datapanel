@@ -1,8 +1,9 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
+import "chartjs-adapter-date-fns";
 
-export function CasesGraph(props) {
+export default function CasesGraph(props) {
     let data = props.data;
     console.log(data);
 
@@ -11,7 +12,6 @@ export function CasesGraph(props) {
     return (
         <Line
             data={{
-                labels: xValues,
                 datasets: [
                     {
                         data: [
@@ -25,6 +25,14 @@ export function CasesGraph(props) {
                 ],
             }}
             options={{
+                scales: {
+                    x: {
+                        type: "timeseries",
+                        time: {
+                            unit: "month"
+                        }
+                    },
+                },
                 plugins: {
                     legend: {
                         display: false,

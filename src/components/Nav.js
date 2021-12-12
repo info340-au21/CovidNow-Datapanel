@@ -1,7 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
 
-export function NavBar() {
+export function NavBar(props) {
+    const handleSignOut = (event) => {
+        signOut(getAuth());
+    }
+    console.log(props.user);
     return (
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
             <NavLink className="navbar-brand" exact to="/">
@@ -35,13 +40,21 @@ export function NavBar() {
                             >Dashboard</NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/description">Description</NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/about">About Us</NavLink>
                     </li>
                 </ul>
                 <div className="nav navbar-nav navbar-right">
+                    {!props.user &&
                     <NavLink className="nav-item nav-link" activeClassName="active" to="/login">
                         <span className="material-icons">login</span> Login
                     </NavLink>
+                    }
+                    {props.user && <>
+                    <button className="btn btn-secondary ms-2" onClick={handleSignOut}>Sign Out</button>
+                    </>}
                 </div>
             </div>
         </nav>

@@ -20,40 +20,40 @@ const firebaseUIConfig = {
 
 export function Login() {
   return (
-    <div>
+    <div className="container">
       <LeftFlex />
       <RightFlex />
     </div>
   );
 }
 
-const LoginForm = () => {
-  return (
-    <form>
-      <div className="login-form">
-        <label for="emailOrUser">Email address or username</label>
-        <input
-          type="email"
-          className="form-control"
-          id="emailOrUser"
-          aria-describedby="emailHelp"
-          placeholder="Enter your email address or username"
-        ></input>
-        <label for="password">Password</label>
-        <input
-          type="email"
-          className="form-control"
-          id="password"
-          aria-describedby="passwordHelp"
-          placeholder="Password"
-        ></input>
-        <button type="button" className="btn btn-primary">
-          Login
-        </button>
-      </div>
-    </form>
-  );
-};
+// const LoginForm = () => {
+//   return (
+//     <form>
+//       <div className="login-form">
+//         <label for="emailOrUser">Email address or username</label>
+//         <input
+//           type="email"
+//           className="form-control"
+//           id="emailOrUser"
+//           aria-describedby="emailHelp"
+//           placeholder="Enter your email address or username"
+//         ></input>
+//         <label for="password">Password</label>
+//         <input
+//           type="email"
+//           className="form-control"
+//           id="password"
+//           aria-describedby="passwordHelp"
+//           placeholder="Password"
+//         ></input>
+//         <button type="button" className="btn btn-primary">
+//           Login
+//         </button>
+//       </div>
+//     </form>
+//   );
+// };
 
 const LeftFlex = () => {
   const auth = getAuth();
@@ -61,7 +61,7 @@ const LeftFlex = () => {
     <div className="flex-item login-column">
       <h4>WELCOME BACK</h4>
       <h2>Log into your account</h2>
-      <LoginForm />
+      {/* <LoginForm /> */}
       <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
     </div>
   );
