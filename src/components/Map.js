@@ -12,7 +12,7 @@ const MAPBOX_TOKEN =
 export default function Map(props) {
     let covidData = props.covidData;
     let date = props.date;
-    console.log(covidData);
+    //console.log(covidData);
     function geoJson(covidData) {
         if (covidData.withData && date !== props.lastUpdatedDate) {
             const { features } = covidData;
@@ -46,7 +46,7 @@ export default function Map(props) {
         }
     }
 
-    console.log(geoJson(covidData));
+    // console.log(geoJson(covidData));
 
     const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
@@ -111,7 +111,7 @@ export default function Map(props) {
         (event) => {
             const { features } = event;
             const clickedFeature = features && features[0];
-            console.log(event);
+            //console.log(event);
             if (clickedFeature && !clickedFeature.properties.class) {
                 history.push("/dashboard/" + clickedFeature.properties.state, {
                     stateData: clickedFeature.properties,
@@ -124,7 +124,7 @@ export default function Map(props) {
                     });
                 } else {
                     console.log("Not logged in!");
-                    console.log(props.user);
+                    //console.log(props.user);
                 }
             }
         },

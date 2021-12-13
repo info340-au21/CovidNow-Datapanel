@@ -14,7 +14,7 @@ export function Dashboard(props) {
     if (props.user) {
         console.log("User is logged in!");
         const userData = ref(db, "DefaultState" + props.user.uid);
-        
+
         onValue(userData, (snapshot) => {
             state = snapshot.child("state").val();
         });
@@ -43,7 +43,7 @@ export function Dashboard(props) {
                 <section>
                     <h1 className="data-head">{state.name}</h1>
                     <h2 className="data-head">
-                        as of <span>{date}</span>.
+                        as of <span>{state.date}</span>.
                     </h2>
                     <div className="data-cd">
                         <div>
