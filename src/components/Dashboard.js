@@ -73,11 +73,19 @@ export function Dashboard(props) {
             </div>
             <div className="widget">
                 <h2>Total Cases Trend</h2>
-                <TrendGraph data={timeSeries} type="cases"/>
+                <TrendGraph data={timeSeries} type="cases" title="Cases"/>
+            </div>
+            <div className="widget">
+                <h2>New Cases Trend</h2>
+                <TrendGraph data={timeSeries} type="newCases" title="New Cases"/>
             </div>
             <div className="widget">
                 <h2>Total Deaths Trend</h2>
-                <TrendGraph data={timeSeries} type="deaths"/>
+                <TrendGraph data={timeSeries} type="deaths" title="Deaths"/>
+            </div>
+            <div className="widget">
+                <h2>New Deaths Trend</h2>
+                <TrendGraph data={timeSeries} type="newDeaths" title="New Deaths"/>
             </div>
         </div>
     );

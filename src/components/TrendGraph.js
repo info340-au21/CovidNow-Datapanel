@@ -26,7 +26,7 @@ export default function CasesGraph(props) {
                     {
                         data: parsedData,
                         borderColor: "rgba(255,0,0,0.8)",
-                        borderWidth: 4,
+                        borderWidth: 2,
                         fill: false,
                         // tension: 0.5,
                     },
@@ -48,7 +48,7 @@ export default function CasesGraph(props) {
                         }
                     },
                     y: {
-                        text: `${type}`,
+                        text: `${props.title}`,
                     },
                 },
                 plugins: {
@@ -59,7 +59,7 @@ export default function CasesGraph(props) {
                         intersect: false,
                         callbacks: {
                             beforeLabel: function () {
-                                let label = `${type}:`;
+                                let label = `${props.title}:`;
                                 return label;
                             },
                         },
