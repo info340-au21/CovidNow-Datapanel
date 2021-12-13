@@ -26,8 +26,12 @@ export default function CasesGraph(props) {
                     {
                         data: parsedData,
                         borderColor: "rgba(255,0,0,0.8)",
-                        borderWidth: 2,
-                        fill: false,
+                        borderWidth: 1,
+                        fill: {
+                            target: "origin",
+                            above: "rgba(255,0,0,0.3)",
+                            below: "rgba(255,0,0,0.3)",
+                        },
                         // tension: 0.5,
                     },
                 ],
@@ -45,7 +49,7 @@ export default function CasesGraph(props) {
                         text: "date",
                         time: {
                             unit: "quarter",
-                        }
+                        },
                     },
                     y: {
                         text: `${props.title}`,
