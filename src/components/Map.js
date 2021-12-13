@@ -2,8 +2,6 @@ import * as React from "react";
 import { useState, useCallback } from "react";
 import { useHistory } from "react-router";
 import MapGL, { Source, Layer } from "react-map-gl";
-import { updateData } from "./utils";
-import states from "../data/us-states.json";
 import { getDatabase, ref, set } from "firebase/database";
 
 const MAPBOX_TOKEN =
@@ -12,12 +10,7 @@ const MAPBOX_TOKEN =
 export default function Map(props) {
     let covidData = props.covidData;
     let date = props.date;
-<<<<<<< HEAD
-    //console.log(covidData);
-=======
-    console.log(covidData);
 
->>>>>>> graph
     function geoJson(covidData) {
         if (covidData.withData && date !== props.lastUpdatedDate) {
             const { features } = covidData;
@@ -51,11 +44,6 @@ export default function Map(props) {
         }
     }
 
-<<<<<<< HEAD
-    // console.log(geoJson(covidData));
-
-=======
->>>>>>> graph
     const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
 
