@@ -7,7 +7,6 @@ import { line } from "d3";
 export default function CasesGraph(props) {
     let timeSeries = props.data;
     let type = props.type;
-    console.log(timeSeries);
     let parsedData = timeSeries.map((day) => {
         return { x: day.date, y: day[type] };
     });

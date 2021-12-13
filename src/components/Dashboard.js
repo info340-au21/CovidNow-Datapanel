@@ -23,22 +23,28 @@ export function Dashboard(props) {
         console.log("User is not logged in!");
         if (lastInfo !== "last") {
             state = history.location.state.stateData;
+            console.log(state);
             timeSeries = history.location.state.timeSeries;
+            console.log(timeSeries);
             date = state.date;
             localStorage.setItem("state", JSON.stringify(state));
+            localStorage.setItem("timeSeries", JSON.stringify(timeSeries));
         } else {
+            console.log(localStorage.getItem("timeSeries"));
             state = JSON.parse(localStorage.getItem("state"));
-            if ("state" === null) {
+            console.log(state);
+            timeSeries = JSON.parse(localStorage.getItem("timeSeries"));
+            console.log(timeSeries);            
+            date = state.date;
+            if (state === null || timeSeries === null) {
                 return (
                     <div className="dashboard">
                         <span>No History Exists</span>
                     </div>
                 );
             }
-            date = state.date;
         }
     }
-    console.log(state);
     return (
         <div className="dashboard">
             <div className={"dashboard-container"}>
