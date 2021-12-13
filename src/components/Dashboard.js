@@ -11,43 +11,46 @@ export function Dashboard(props) {
     let timeSeries;
     let date = "";
     const lastInfo = useParams().params;
-    if (props.user) {
-        console.log("User is logged in!");
-        const userData = ref(db, "DefaultState" + props.user.uid);
-
-        onValue(userData, (snapshot) => {
-            state = snapshot.child("state").val();
-        });
+    if (lastInfo !== "last") {
+        state = history.location.state.stateData;
+        console.log(state);
+        timeSeries = history.location.state.timeSeries;
+        console.log(timeSeries);
+        date = state.date;
+        localStorage.setItem("state", JSON.stringify(state));
+        localStorage.setItem("timeSeries", JSON.stringify(timeSeries));
     } else {
-        console.log("User is not logged in!");
-        if (lastInfo !== "last") {
-            state = history.location.state.stateData;
-            console.log(state);
-            timeSeries = history.location.state.timeSeries;
-            console.log(timeSeries);
-            date = state.date;
-            localStorage.setItem("state", JSON.stringify(state));
-            localStorage.setItem("timeSeries", JSON.stringify(timeSeries));
-        } else {
-            console.log(localStorage.getItem("timeSeries"));
-            state = JSON.parse(localStorage.getItem("state"));
-            console.log(state);
-            timeSeries = JSON.parse(localStorage.getItem("timeSeries"));
-            console.log(timeSeries);            
-            if (state === null || timeSeries === null) {
-                return (
-                    <div className="dashboard">
-                        <div className={"dashboard-container"}>
-                        <section>
-                            <h1 className="data-head">No History Exists</h1>
-                        </section>
+        // if (props.user) {
+        //     console.log("User is logged in!");
+        //     const userData = ref(db, "DefaultState" + props.user.uid);
+    
+            // onValue(userData, (snapshot) => {
+            //     state = snapshot.child("state").val();
+            //     timeSeries = snapshot.child("timeSeries");
+            //     console.log(timeSeries);
+            // });
+        // } else {
+            console.log("User is not logged in!");
+                console.log(localStorage.getItem("timeSeries"));
+                state = JSON.parse(localStorage.getItem("state"));
+                console.log(state);
+                timeSeries = JSON.parse(localStorage.getItem("timeSeries"));
+                console.log(timeSeries);            
+                if (state === null || timeSeries === null) {
+                    return (
+                        <div className="dashboard">
+                            <div className={"dashboard-container"}>
+                            <section>
+                                <h1 className="data-head">No History Exists</h1>
+                            </section>
+                            </div>
                         </div>
-                    </div>
-                );
-            }
-            date = state.date;
-        }
+                    );
+                }
+                date = state.date;
+        // }
     }
+
     return (
         <div className="dashboard">
             <div className={"dashboard-container"}>

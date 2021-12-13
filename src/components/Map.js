@@ -154,9 +154,10 @@ export default function Map(props) {
             });
             if (props.user) {
                 console.log("Storing to DB");
+                // for storing defaultState
                 set(ref(db, "DefaultState" + props.user.uid), {
                     userId: props.user.uid,
-                    state: clickedFeature.properties,
+                    stateData: clickedFeature.properties,
                 });
             } else {
                 console.log("Not logged in!");
