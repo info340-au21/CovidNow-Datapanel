@@ -5,8 +5,9 @@ export function Description() {
         <div  className="text-center">
             <IntroBanner />
             <RealTime />
-            <InteractiveMap/>
             <OverviewPageDemo/>
+            <InteractiveMap/>
+            {/* <DescriptionDashboard/> */}
         </div>
     )
 }
@@ -29,9 +30,9 @@ export function RealTime() {
             <p>Our COVID-19 data is provided by an API from Covid Act Now.</p>
             <a href="https://covidactnow.org/" target="_blank"><img src="../img/CovidActNowLogo.png" alt="d" /></a>
             <p>-</p>
-            <a href="https://covidactnow.org/data-api">covidactnow.org/data-api</a>
+            <a href="https://covidactnow.org/data-api" target="_blank">covidactnow.org/data-api</a>
             <p>-</p>
-            <a href="https://apidocs.covidactnow.org/">apidocs.covidactnow.org</a>
+            <a href="https://apidocs.covidactnow.org/" target="_blank">apidocs.covidactnow.org</a>
             <p>-</p>
             <p>The API updates daily around noon Eastern Time,</p>
             <p>and includes data ranging from COVID-19 cases, deaths, vaccination rates, tests, hospitalization rates, and <a href="https://apidocs.covidactnow.org/data-definitions/">more</a>.</p>
@@ -41,7 +42,7 @@ export function RealTime() {
 
 export function OverviewPageDemo() {
     return (
-        <div className="mt-5 pb-5 description-img">
+        <div className="mt-5 description-img">
             <h2>What's included in our Overview page?</h2>
             <p>-</p>
             <p>Left includes a banner with an up-to-date total COVID-19 cases and deaths for USA.</p>
@@ -59,7 +60,7 @@ export function InteractiveMap() {
             <p>Our interactive map is provided by Mapbox GL JS from Mapbox.</p>
             <a href="https://www.mapbox.com/" target="_blank"><img src="../img/MapboxLogo.svg" alt="d" /></a>
             <p>-</p>
-            <a href="https://docs.mapbox.com/mapbox-gl-js/guides/">docs.mapbox.com/mapbox-gl-js</a>
+            <a href="https://docs.mapbox.com/mapbox-gl-js/guides/" target="_blank">docs.mapbox.com/mapbox-gl-js</a>
             <p>-</p>
             <p>A library for building customizable, user-interactive map for web applications.</p>
             <p>Thanks to Mapbox, we are able to easily visualize our COVID-19 for each states.</p>
@@ -67,8 +68,33 @@ export function InteractiveMap() {
                 <img src="../img/movement.gif" alt="s" />
                 <img src="../img/statehover.gif" alt="s" />
             </div>
-            {/* <img src="../img/movement.gif" alt="s" />
-            <img src="../img/statehover.gif" alt="s" /> */}
+        </div>
+    )
+}
+
+export function DescriptionDashboard() {
+    return (
+        <div>
+            <h2>Dashboard.</h2>
+            <p>When user clicks on a state from the overview page, the web brings the user to the dashboard page,</p>
+            <p>which includes COVID-19 data for the specific state.</p>
+        </div>
+    )
+}
+
+export function DescriptionWidgets() {
+    return (
+        <div>
+            <h2>test</h2>
+        </div>
+    )
+}
+
+export function DescriptionLogin() {
+    return (
+        <div>
+            <h2>test</h2>
+            <p>Using firebase, the Login function allows the users to save a preffered account, making it convenience for returning users.</p>
         </div>
     )
 }
