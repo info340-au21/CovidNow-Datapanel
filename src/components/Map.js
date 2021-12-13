@@ -13,6 +13,7 @@ export default function Map(props) {
     let covidData = props.covidData;
     let date = props.date;
     console.log(covidData);
+
     function geoJson(covidData) {
         if (covidData.withData && date !== props.lastUpdatedDate) {
             const { features } = covidData;
@@ -45,8 +46,6 @@ export default function Map(props) {
             return covidData;
         }
     }
-
-    console.log(geoJson(covidData));
 
     const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
@@ -107,29 +106,66 @@ export default function Map(props) {
 
     let history = useHistory();
 
-    const onClick = useCallback(
-        (event) => {
-            const { features } = event;
-            const clickedFeature = features && features[0];
-            console.log(event);
-            if (clickedFeature && !clickedFeature.properties.class) {
-                history.push("/dashboard/" + clickedFeature.properties.state, {
-                    stateData: clickedFeature.properties,
+    // const onClick = useCallback(
+    //     (event) => {
+    //         const { features } = event;
+    //         const clickedFeature = features && features[0];
+    //         console.log(covidData);
+    //         if (clickedFeature && !clickedFeature.properties.class) {
+    //             let clickedState = clickedFeature.properties.state;
+    //             let timeSeries = covidData.features.filter((f) => {
+    //                 return f.properties.state === clickedState;
+    //             })[0];
+    //             console.log(timeSeries)
+    //             history.push("/dashboard/" + clickedState, {
+    //                 stateData: clickedFeature.properties,
+    //                 timeSeries: 1
+    //             });
+    //             if (props.user) {
+    //                 console.log("Storing to DB");
+    //                 set(ref(db, "DefaultState" + props.user.uid), {
+    //                     userId: props.user.uid,
+    //                     state: clickedFeature.properties,
+    //                 });
+    //             } else {
+    //                 console.log("Not logged in!");
+    //                 console.log(props.user);
+    //             }
+    //         }
+    //     },
+    //     [history]
+    // );
+
+    const onClick = (event) => {
+        const { features } = event;
+        const clickedFeature = features && features[0];
+        console.log(covidData);
+        if (
+            clickedFeature &&
+            !clickedFeature.properties.class &&
+            covidData.withData
+        ) {
+            let clickedState = clickedFeature.properties.state;
+            let timeSeries = covidData.features.filter((f) => {
+                return f.properties.state === clickedState;
+            })[0];
+            console.log(timeSeries);
+            history.push("/dashboard/" + clickedState, {
+                stateData: clickedFeature.properties,
+                timeSeries: 1,
+            });
+            if (props.user) {
+                console.log("Storing to DB");
+                set(ref(db, "DefaultState" + props.user.uid), {
+                    userId: props.user.uid,
+                    state: clickedFeature.properties,
                 });
-                if (props.user) {
-                    console.log("Storing to DB");
-                    set(ref(db, "DefaultState" + props.user.uid), {
-                        userId: props.user.uid,
-                        state: clickedFeature.properties,
-                    });
-                } else {
-                    console.log("Not logged in!");
-                    console.log(props.user);
-                }
+            } else {
+                console.log("Not logged in!");
+                console.log(props.user);
             }
-        },
-        [history]
-    );
+        }
+    };
 
     return (
         <MapGL

@@ -9,6 +9,7 @@ export function Dashboard(props) {
     const db = getDatabase();
     let history = useHistory();
     let state = { cases: " ", deaths: " ", state: "", date: "", geo: {} };
+    let timeSeries;
     let date = "";
     const lastInfo = useParams().params;
     if (props.user) {
@@ -22,6 +23,8 @@ export function Dashboard(props) {
         console.log("User is not logged in!");
         if (lastInfo !== "last") {
             state = history.location.state.stateData;
+            timeSeries = history.location.state.timeSeries;
+            console.log(timeSeries);
             date = state.date;
             localStorage.setItem("state", JSON.stringify(state));
         } else {
