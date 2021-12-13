@@ -13,7 +13,6 @@ export default function Map(props) {
     let covidData = props.covidData;
     let date = props.date;
     console.log(covidData);
-    console.log(date, props.lastUpdatedDate);
     function geoJson(covidData) {
         if (
             covidData.withData &&
@@ -28,12 +27,16 @@ export default function Map(props) {
                             (singleDayData) => singleDayData.date === date
                         )[0];
                         if (dataOnSpecificDate) {
-                            let cases = dataOnSpecificDate.cases;
-                            let deaths = dataOnSpecificDate.deaths;
+                            let cases = dataOnSpecificDate.cases ? dataOnSpecificDate.cases : null;
+                            let deaths = dataOnSpecificDate.deaths ? dataOnSpecificDate.deaths : null;
+                            let newCases = dataOnSpecificDate.newCases ? dataOnSpecificDate.newCases : null;
+                            let newDeaths = dataOnSpecificDate.newDeaths ? dataOnSpecificDate.newCases : null;
                             const properties = {
                                 ...f.properties,
                                 cases,
                                 deaths,
+                                newCases,
+                                newDeaths,
                                 date,
                             };
                             return { ...f, properties };

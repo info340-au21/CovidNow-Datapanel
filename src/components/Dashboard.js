@@ -48,11 +48,19 @@ export function Dashboard(props) {
                     <div className="data-cd">
                         <div>
                             <h3>cases</h3>
-                            <p>{state.cases.toLocaleString()}</p>
+                            <p>
+                                {state.cases
+                                    ? state.cases.toLocaleString()
+                                    : "no data"}
+                            </p>
                         </div>
                         <div>
                             <h3>deaths</h3>
-                            <p>{state.deaths.toLocaleString()}</p>
+                            <p>
+                                {state.deaths
+                                    ? state.deaths.toLocaleString()
+                                    : "no data"}
+                            </p>
                         </div>
                     </div>
                     <div className="slider">
