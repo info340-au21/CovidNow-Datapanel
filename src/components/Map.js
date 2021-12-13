@@ -63,8 +63,6 @@ export default function Map(props) {
         }
     }
 
-    console.log(geoJson(covidData));
-
     const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
 
