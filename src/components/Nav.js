@@ -53,7 +53,9 @@ export function NavBar(props) {
                     </NavLink>
                     }
                     {props.user && <>
-                    <button className="btn btn-secondary ms-2" onClick={handleSignOut}>Sign Out</button>
+                    <NavLink className="nav-item nav-link" onClick={handleSignOut} exact to="/">
+                        <span className="material-icons">logout</span> Sign Out
+                    </NavLink>
                     </>}
                 </div>
             </div>

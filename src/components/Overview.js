@@ -41,7 +41,7 @@ export function Overview(props) {
                     />
                 </section>
             </div>
-            <img src="../img/scale.png" alt="scale" />
+            <img src="../img/scale.svg" alt="scale" />
         </div>
     );
 }
