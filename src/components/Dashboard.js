@@ -2,13 +2,14 @@ import React from "react";
 //import { mapControlDefaultProps } from "react-map-gl/src/components/use-map-control";
 import { useHistory, useParams } from "react-router";
 import CreateSVG from "./CreateSVG";
-import CasesGraph from "./CasesGraph";
+import TrendGraph from "./TrendGraph";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 export function Dashboard(props) {
     const db = getDatabase();
     let history = useHistory();
     let state = { cases: " ", deaths: " ", state: "", date: "", geo: {} };
+    let timeSeries;
     let date = "";
     const lastInfo = useParams().params;
     if (props.user) {
@@ -22,6 +23,7 @@ export function Dashboard(props) {
         console.log("User is not logged in!");
         if (lastInfo !== "last") {
             state = history.location.state.stateData;
+            timeSeries = history.location.state.timeSeries;
             date = state.date;
             localStorage.setItem("state", JSON.stringify(state));
         } else {
@@ -70,8 +72,12 @@ export function Dashboard(props) {
                 <CreateSVG data={state} />
             </div>
             <div className="widget">
-                <h2>Cases Trend</h2>
-                <CasesGraph data={state} />
+                <h2>Total Cases Trend</h2>
+                <TrendGraph data={timeSeries} type="cases"/>
+            </div>
+            <div className="widget">
+                <h2>Total Deaths Trend</h2>
+                <TrendGraph data={timeSeries} type="deaths"/>
             </div>
         </div>
     );
