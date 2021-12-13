@@ -31,7 +31,6 @@ export default function CasesGraph(props) {
                             above: "rgba(255,0,0,0.3)",
                             below: "rgba(255,0,0,0.3)",
                         },
-                        // tension: 0.1,
                     },
                 ],
             }}
