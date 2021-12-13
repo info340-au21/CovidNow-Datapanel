@@ -5,7 +5,8 @@ import { useState } from "react";
 export function Overview(props) {
   let usData = props.usData;
 
-  let date = "2021-12-11";
+//   let date = "2021-12-11";
+  let date = usData.lastUpdatedDate;
   let lastUpdatedDate = usData.lastUpdatedDate;
 
   return (

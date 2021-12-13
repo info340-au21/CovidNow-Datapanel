@@ -13,6 +13,7 @@ export default function Map(props) {
     let covidData = props.covidData;
     let date = props.date;
     console.log(covidData);
+    console.log(date, props.lastUpdatedDate);
     function geoJson(covidData) {
         if (
             covidData.withData &&
