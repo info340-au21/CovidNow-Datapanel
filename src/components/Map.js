@@ -14,10 +14,7 @@ export default function Map(props) {
     let date = props.date;
     console.log(covidData);
     function geoJson(covidData) {
-        if (
-            covidData.withData &&
-            date !== props.lastUpdatedDate
-        ) {
+        if (covidData.withData && date !== props.lastUpdatedDate) {
             const { features } = covidData;
             return {
                 type: "FeatureCollection",
@@ -27,10 +24,10 @@ export default function Map(props) {
                             (singleDayData) => singleDayData.date === date
                         )[0];
                         if (dataOnSpecificDate) {
-                            let cases = dataOnSpecificDate.cases ? dataOnSpecificDate.cases : null;
-                            let deaths = dataOnSpecificDate.deaths ? dataOnSpecificDate.deaths : null;
-                            let newCases = dataOnSpecificDate.newCases ? dataOnSpecificDate.newCases : null;
-                            let newDeaths = dataOnSpecificDate.newDeaths ? dataOnSpecificDate.newCases : null;
+                            let cases = dataOnSpecificDate.cases;
+                            let deaths = dataOnSpecificDate.deaths;
+                            let newCases = dataOnSpecificDate.newCases;
+                            let newDeaths = dataOnSpecificDate.newDeaths;
                             const properties = {
                                 ...f.properties,
                                 cases,
@@ -61,7 +58,6 @@ export default function Map(props) {
     if (mq.matches) {
         zoom = 3;
     }
-
 
     const [viewport, setViewport] = useState({
         latitude: 40,
@@ -101,10 +97,10 @@ export default function Map(props) {
         setHoverInfo(
             hoveredFeature
                 ? {
-                    feature: hoveredFeature,
-                    x: x,
-                    y: y,
-                }
+                      feature: hoveredFeature,
+                      x: x,
+                      y: y,
+                  }
                 : null
         );
     }, []);
@@ -118,7 +114,7 @@ export default function Map(props) {
             console.log(event);
             if (clickedFeature && !clickedFeature.properties.class) {
                 history.push("/dashboard/" + clickedFeature.properties.state, {
-                    stateData: clickedFeature.properties
+                    stateData: clickedFeature.properties,
                 });
                 if (props.user) {
                     console.log("Storing to DB");
