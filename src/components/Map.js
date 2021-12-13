@@ -10,6 +10,7 @@ const MAPBOX_TOKEN =
 export default function Map(props) {
     let covidData = props.covidData;
     let date = props.date;
+    // console.log(covidData);
 
     function geoJson(covidData) {
         if (covidData.withData && date !== props.lastUpdatedDate) {
