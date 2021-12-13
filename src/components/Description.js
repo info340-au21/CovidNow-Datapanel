@@ -5,11 +5,11 @@ export function Description() {
     return (
         <div  className="description-page text-center">
             <IntroBanner />
+            <DirectToAbout/>
             <RealTime />
             <OverviewPageDemo/>
             <InteractiveMap/>
             <DescriptionDashboard/>
-            <DirectToAbout/>
         </div>
     )
 }
