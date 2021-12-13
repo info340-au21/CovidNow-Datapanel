@@ -156,6 +156,12 @@ p {
     border-bottom: 0.1rem #f0f0f0;
 }
 
+.description-page h2 {
+    /* text-align: center; */
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
 .description-img img {
     border-radius: 2.5%;
     width: 40%;
@@ -166,6 +172,13 @@ p {
     display: none;
     height: 350px;
     width: 450px;
+    margin-bottom: 3rem;
+}
+
+.dashboard-top-img img{
+    border: 2px solid white;
+    width: 65%;
+    margin: 15px;
 }
 
 .hoverStat {

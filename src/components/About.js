@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function AboutUs() {
     return ( 
@@ -6,7 +7,7 @@ export function AboutUs() {
             <section className="col-lg">
                 <ProblemDesc />
                 <TheWho />
-                {/* <TheSource /> */}
+                <TheSource />
                 <TheInteraction />
                 <TheSolution />
                 <TheContact />
@@ -66,6 +67,16 @@ const TheWho = () => {
 //         </div>
 //      );
 // }
+
+const TheSource = () => {
+    return ( 
+        <div className="details">
+            <h3>What kind of information will the users be viewing?</h3>
+            <p>An interactive geographic map of the US will be presented to the users to navigate information visually.</p>
+            <p>Visit the <Link to="/description">Description</Link> page to learn more about the data and its sources.</p>
+        </div>
+     );
+}
 
 const TheInteraction = () => {
     return ( 

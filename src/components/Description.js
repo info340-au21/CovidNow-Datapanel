@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function Description() {
     return (
-        <div  className="text-center">
+        <div  className="description-page text-center">
             <IntroBanner />
             <RealTime />
             <OverviewPageDemo/>
             <InteractiveMap/>
-            {/* <DescriptionDashboard/> */}
+            <DescriptionDashboard/>
+            <DirectToAbout/>
         </div>
     )
 }
@@ -44,7 +46,6 @@ export function OverviewPageDemo() {
     return (
         <div className="mt-5 description-img">
             <h2>What's included in our Overview page?</h2>
-            <p>-</p>
             <p>Left includes a banner with an up-to-date total COVID-19 cases and deaths for USA.</p>
             <img src="../img/OverviewLeftBanner.png" alt="d" />
             <p>Right includes a state map with a functioning interactive map that shows various COVID-19 data for each state.</p>
@@ -74,10 +75,17 @@ export function InteractiveMap() {
 
 export function DescriptionDashboard() {
     return (
-        <div>
+        <div className="mt-5">
             <h2>Dashboard.</h2>
             <p>When user clicks on a state from the overview page, the web brings the user to the dashboard page,</p>
-            <p>which includes COVID-19 data for the specific state.</p>
+            <div className="dashboard-top-img">
+                <img src="../img/DashboardTop.png" alt="se" />
+            </div>
+            <p>The dashboard page includes a comprehensive COVID-19 data & interactive COVID-19 data chart for the chosen state.</p>
+            <div className="map-gif">
+                <img src="../img/FirstTrendChart.gif" alt="s" />
+                <img src="../img/SecondTrendChart.gif" alt="s" />
+            </div>
         </div>
     )
 }
@@ -95,6 +103,14 @@ export function DescriptionLogin() {
         <div>
             <h2>test</h2>
             <p>Using firebase, the Login function allows the users to save a preffered account, making it convenience for returning users.</p>
+        </div>
+    )
+}
+
+export function DirectToAbout() {
+    return (
+        <div>
+            <p>To learn more about our project, head over to the <Link to="/about">About Us</Link> section.</p>
         </div>
     )
 }
