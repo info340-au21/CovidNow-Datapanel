@@ -18,7 +18,6 @@ export default function CasesGraph(props) {
     //     return { x: new Date(date[0], date[1], date[2]), y: day.newCases };
     // });
 
-
     return (
         <Line
             data={{
@@ -32,14 +31,20 @@ export default function CasesGraph(props) {
                             above: "rgba(255,0,0,0.3)",
                             below: "rgba(255,0,0,0.3)",
                         },
-                        // tension: 0.5,
+                        // tension: 0.1,
                     },
                 ],
             }}
             options={{
+                hover: {
+                    mode: "nearest",
+                    axis: "x",
+                    intersect: false,
+                },
                 elements: {
                     point: {
                         radius: 0,
+                        hoverRadius: 5,
                         backgroundColor: "white",
                     },
                 },
@@ -60,6 +65,8 @@ export default function CasesGraph(props) {
                         display: false,
                     },
                     tooltip: {
+                        mode: "nearest",
+                        axis: "x",
                         intersect: false,
                         callbacks: {
                             beforeLabel: function () {
