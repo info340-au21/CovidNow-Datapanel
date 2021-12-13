@@ -2,7 +2,7 @@ import React from "react";
 //import { mapControlDefaultProps } from "react-map-gl/src/components/use-map-control";
 import { useHistory, useParams } from "react-router";
 import CreateSVG from "./CreateSVG";
-import CasesGraph from "./CasesGraph";
+import TrendGraph from "./TrendGraph";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 export function Dashboard(props) {
@@ -72,8 +72,12 @@ export function Dashboard(props) {
                 <CreateSVG cases={state.cases} geoJson={state.geo} />
             </div>
             <div className="widget">
-                <h2>Cases Trend</h2>
-                <CasesGraph data={timeSeries} />
+                <h2>Total Cases Trend</h2>
+                <TrendGraph data={timeSeries} type="cases"/>
+            </div>
+            <div className="widget">
+                <h2>Total Deaths Trend</h2>
+                <TrendGraph data={timeSeries} type="deaths"/>
             </div>
         </div>
     );
