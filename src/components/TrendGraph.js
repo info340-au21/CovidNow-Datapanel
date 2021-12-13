@@ -36,17 +36,27 @@ export default function CasesGraph(props) {
             options={{
                 scales: {
                     x: {
-                        type: "time"
+                        type: "time",
+                        text: "date",
+                    },
+                    y: {
+                        text: `${type}`,
                     },
                 },
-
                 plugins: {
                     legend: {
                         display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            beforeLabel: function () {
+                                let label = `${type }:`;
+                                return label;
+                            },
+                        },
                     },
                 },
             }}
         />
     );
 }
-
