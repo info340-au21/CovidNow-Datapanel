@@ -1,5 +1,4 @@
 import React from "react";
-//import { mapControlDefaultProps } from "react-map-gl/src/components/use-map-control";
 import { useHistory, useParams } from "react-router";
 import CreateSVG from "./CreateSVG";
 import TrendGraph from "./TrendGraph";
