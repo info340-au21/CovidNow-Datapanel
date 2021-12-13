@@ -34,14 +34,18 @@ export function Dashboard(props) {
             console.log(state);
             timeSeries = JSON.parse(localStorage.getItem("timeSeries"));
             console.log(timeSeries);            
-            date = state.date;
             if (state === null || timeSeries === null) {
                 return (
                     <div className="dashboard">
-                        <span>No History Exists</span>
+                        <div className={"dashboard-container"}>
+                        <section>
+                            <h1 className="data-head">No History Exists</h1>
+                        </section>
+                        </div>
                     </div>
                 );
             }
+            date = state.date;
         }
     }
     return (
