@@ -72,12 +72,12 @@ footer a {
     max-width: 1000px;
     background-color: #3f3c41;
     border-radius: 30px;
-    padding: 1.5rem;
     margin-bottom: 20px;
+    padding: 8px;
 }
 
 .widget h2 {
+    padding: 1rem;
     font-weight: 600;
     color: white;
-    margin-bottom: 20px;
 }
