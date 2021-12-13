@@ -36,7 +36,7 @@ export function Dashboard(props) {
             date = state.date;
         }
     }
-
+    console.log(state);
     return (
         <div className="dashboard">
             <div className={"dashboard-container"}>
@@ -67,7 +67,7 @@ export function Dashboard(props) {
                         <img src="../img/time-slider.png" alt="time slider" />
                     </div>
                 </section>
-                <CreateSVG cases={state.cases} geoJson={state.geo} />
+                <CreateSVG data={state} />
             </div>
             <div className="widget">
                 <h2>Cases Trend</h2>

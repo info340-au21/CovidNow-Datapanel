@@ -2,12 +2,16 @@ import React from "react";
 import * as d3 from 'd3';
 
 
-export default function CreateSVG({ cases, geoJson }) {
+export default function CreateSVG({props}) {
 
-    geoJson = JSON.parse(geoJson); 
+    let data = props.data;
+    console.log(data);
+    var cases = props.data.cases;
+    var geoJson = JSON.parse(props.data.geo); 
     const width = 382
     const height = 284
     let color = '#EFEFEF'
+    cases = props.data.cases;
 
     if (between(cases, 150000, 250000)) {
         color = '#EEBBB7';
