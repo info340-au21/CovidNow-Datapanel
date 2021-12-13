@@ -50,7 +50,10 @@ export default function App() {
         })
   });
 
-  let [usData, setUS] = useState({actuals: {cases: "0", deaths: "0"}, lastUpdatedDate : "0"});
+  let [usData, setUS] = useState({
+      actuals: { cases: "0", deaths: "0" },
+      lastUpdatedDate: "2020-03-10",
+  });
 
   function getUS() {
     fetch(US_URL)

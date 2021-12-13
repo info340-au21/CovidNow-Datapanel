@@ -18,32 +18,52 @@ export default function Map(props) {
             return {
                 type: "FeatureCollection",
                 features: features.map((f) => {
-                    if (f.data) {
-                        let dataOnSpecificDate = f.data.filter(
-                            (singleDayData) => singleDayData.date === date
-                        )[0];
-                        if (dataOnSpecificDate) {
-                            let cases = dataOnSpecificDate.cases;
-                            let deaths = dataOnSpecificDate.deaths;
-                            let newCases = dataOnSpecificDate.newCases;
-                            let newDeaths = dataOnSpecificDate.newDeaths;
-                            const properties = {
-                                ...f.properties,
-                                cases,
-                                deaths,
-                                newCases,
-                                newDeaths,
-                                date,
-                            };
-                            return { ...f, properties };
-                        }
+                    let dataOnSpecificDate = f.data.filter(
+                        (singleDayData) => singleDayData.date === date
+                    )[0];
+                    if (dataOnSpecificDate) {
+                        let cases = dataOnSpecificDate.cases;
+                        let deaths = dataOnSpecificDate.deaths;
+                        let newCases = dataOnSpecificDate.newCases;
+                        let newDeaths = dataOnSpecificDate.newDeaths;
+                        const properties = {
+                            ...f.properties,
+                            cases,
+                            deaths,
+                            newCases,
+                            newDeaths,
+                            date,
+                        };
+                        return { ...f, properties };
+                    } else {
+                        let cases,
+                            deaths,
+                            newCases,
+                            newDeaths = null;
+                        const properties = {
+                            ...f.properties,
+                            cases,
+                            deaths,
+                            newCases,
+                            newDeaths,
+                            date,
+                        };
+                        return {
+                            ...f,
+                            properties,
+                        };
                     }
                 }),
             };
         } else {
+            // if selected date is the last update date(since the actualsTimeseries does not include last update data)
+            // returns the most recent data which is actuals
+            // or if the covid data is not updated, return the original us-states.json geo data
             return covidData;
         }
     }
+
+    console.log(geoJson(covidData));
 
     const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
@@ -184,8 +204,8 @@ export default function Map(props) {
                     className="hoverStat"
                     style={{ left: hoverInfo.x, top: hoverInfo.y }}>
                     <div>State: {hoverInfo.feature.properties.name}</div>
-                    <div>Cases: {hoverInfo.feature.properties.cases}</div>
-                    <div>Deaths: {hoverInfo.feature.properties.deaths}</div>
+                    <div>Cases: {hoverInfo.feature.properties.cases ? hoverInfo.feature.properties.cases : "no data"}</div>
+                    <div>Deaths: {hoverInfo.feature.properties.deaths ? hoverInfo.feature.properties.deaths : "no data"}</div>
                     <div>date: {hoverInfo.feature.properties.date}</div>
                 </div>
             )}

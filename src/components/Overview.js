@@ -1,13 +1,14 @@
 import React from "react";
 import Map from "./Map";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Overview(props) {
     let usData = props.usData;
 
-    // let date = "2021-12-09";
-    let date = usData.lastUpdatedDate;
+    // let date = usData.lastUpdatedDate;
     let lastUpdatedDate = usData.lastUpdatedDate;
+    // let [date, setDate] = useState("2020-03-01");
+    let date = "2020-03-01"
 
     return (
         <div className="overview">
