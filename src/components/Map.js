@@ -148,11 +148,11 @@ export default function Map(props) {
             let clickedState = clickedFeature.properties.state;
             let timeSeries = covidData.features.filter((f) => {
                 return f.properties.state === clickedState;
-            })[0];
+            })[0].data;
             console.log(timeSeries);
             history.push("/dashboard/" + clickedState, {
                 stateData: clickedFeature.properties,
-                timeSeries: 1,
+                timeSeries: timeSeries,
             });
             if (props.user) {
                 console.log("Storing to DB");

@@ -24,7 +24,6 @@ export function Dashboard(props) {
         if (lastInfo !== "last") {
             state = history.location.state.stateData;
             timeSeries = history.location.state.timeSeries;
-            console.log(timeSeries);
             date = state.date;
             localStorage.setItem("state", JSON.stringify(state));
         } else {
@@ -74,7 +73,7 @@ export function Dashboard(props) {
             </div>
             <div className="widget">
                 <h2>Cases Trend</h2>
-                <CasesGraph data={state} />
+                <CasesGraph data={timeSeries} />
             </div>
         </div>
     );
