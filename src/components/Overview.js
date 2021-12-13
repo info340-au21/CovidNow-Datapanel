@@ -1,14 +1,16 @@
 import React from "react";
 import Map from "./Map";
 import { useState, useEffect } from "react";
+import Slider from "@mui/material/Slider";
+import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 
 export function Overview(props) {
     let usData = props.usData;
 
     // let date = usData.lastUpdatedDate;
     let lastUpdatedDate = usData.lastUpdatedDate;
-    // let [date, setDate] = useState("2020-03-01");
-    let date = "2020-03-01"
+    let [date, setDate] = useState("2020-03-01");
+    // let date = "2020-03-01"
 
     return (
         <div className="overview">
@@ -28,8 +30,16 @@ export function Overview(props) {
                             <p>{usData.actuals.deaths.toLocaleString()}</p>
                         </div>
                     </div>
-                    <div className="slider">
-                        <img src="../img/time-slider.png" alt="time slider" />
+                    <div className="slider-container">
+                        <h3>time slider</h3>
+                        <StyledEngineProvider injectFirst>
+                            <Slider
+                                className="slider"
+                                defaultValue={50}
+                                aria-label="Default"
+                                valueLabelDisplay="auto"
+                            />
+                        </StyledEngineProvider>
                     </div>
                 </section>
                 <section id="US">
