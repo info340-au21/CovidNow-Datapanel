@@ -31,7 +31,7 @@ export function Overview(props) {
                         </div>
                     </div>
                     <div className="slider-container">
-                        <h3>time slider</h3>
+                        <h3>select date</h3>
                         <StyledEngineProvider injectFirst>
                             <Slider
                                 className="slider"

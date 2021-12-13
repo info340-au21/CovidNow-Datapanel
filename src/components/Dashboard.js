@@ -77,9 +77,6 @@ export function Dashboard(props) {
                             </p>
                         </div>
                     </div>
-                    <div className="slider">
-                        <img src="../img/time-slider.png" alt="time slider" />
-                    </div>
                 </section>
                 <CreateSVG data={state} />
             </div>
