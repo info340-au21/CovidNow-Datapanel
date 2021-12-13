@@ -22,6 +22,7 @@ export default function App() {
 
   let [covidData, setData] = useState(states);
   const [currentUser, setCurrentUser] = useState(null);
+  console.log(covidData);
 
   const auth = getAuth();
   useEffect(() => {

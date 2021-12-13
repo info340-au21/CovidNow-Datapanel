@@ -47,10 +47,14 @@ p {
 }
 
 
-.us-map, .trend, .rate {
+#US, .trend, .rate {
     display: block;
     margin: 0 auto;
     width: 100%;
+}
+
+#US {
+    height: 50vh;
 }
 
 .overview-container + img {

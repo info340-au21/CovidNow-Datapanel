@@ -13,6 +13,7 @@ export default function Map(props) {
     let covidData = props.covidData;
     let date = props.date;
     console.log(covidData);
+    console.log(date, props.lastUpdatedDate);
     function geoJson(covidData) {
         if (
             covidData.withData &&
@@ -50,10 +51,19 @@ export default function Map(props) {
     const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
 
+    let zoom = 2;
+
+    var mq = window.matchMedia("(min-width: 992px)");
+
+    if (mq.matches) {
+        zoom = 3;
+    }
+
+
     const [viewport, setViewport] = useState({
         latitude: 40,
         longitude: -100,
-        zoom: 3,
+        zoom: zoom,
         bearing: 0,
         pitch: 0,
     });
