@@ -201,7 +201,7 @@ p {
     margin: 15px;
 }
 
-.dashboard-container .button {
+.dashboard-container button {
     width: 180px;
     text-align: center;
     display: block;
@@ -210,11 +210,16 @@ p {
     transition: 0.3s;
     padding: 10px;
     margin: 20px auto;
-    width: 30vh;
+    border-radius: 30px;
+    border: none;
 }
 
-.dashboard-container .button:hover {
-    border: none;
+.dashboard-container button:disabled {
+    background-color: rgb(93, 93, 93);
+    color: #3f3c41;
+}
+
+.dashboard-container .enabled:hover {
     background-color: #ec4444a4;
     cursor: pointer;
 }
