@@ -262,6 +262,7 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: calc(100vh - 172px);
 }
 
 form input, form textarea {
@@ -394,6 +395,10 @@ form button {
 
     .dashboard-container .button {
         display: inline-block;
+    }
+
+    form {
+        height: calc(100vh - 122px);
     }
 }
 
