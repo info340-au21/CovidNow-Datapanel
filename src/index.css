@@ -173,7 +173,6 @@ p {
 }
 
 .description-page h2 {
-    /* text-align: center; */
     text-decoration: underline;
     margin-bottom: 20px;
 }
@@ -207,12 +206,11 @@ p {
     text-align: center;
     display: block;
     position: relative;
-    border: none;
     background-color: #ec4444;
     transition: 0.3s;
     padding: 10px;
-    border-radius: 30px;
     margin: 20px auto;
+    width: 30vh;
 }
 
 .dashboard-container .button:hover {
