@@ -33,11 +33,20 @@ export function NavBar(props) {
                         <NavLink className="nav-link" activeClassName="active" exact to="/">Overview</NavLink>
                     </li>
                     <li className="nav-item">
+                        {!props.user &&
                         <NavLink
+                        className="nav-link"
+                        activeClassName="active"
+                        to="/dashboard/last"
+                        >Dashboard</NavLink>
+                        }
+                        {props.user && <>
+                            <NavLink
                             className="nav-link"
                             activeClassName="active"
-                            to="/dashboard/last"
+                            to="/dashboard/default"
                             >Dashboard</NavLink>
+                        </>}
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/description">Description</NavLink>

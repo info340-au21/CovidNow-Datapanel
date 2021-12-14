@@ -2,7 +2,6 @@ import * as React from "react";
 import { useState, useCallback } from "react";
 import { useHistory } from "react-router";
 import MapGL, { Source, Layer } from "react-map-gl";
-import { getDatabase, ref, set } from "firebase/database";
 
 const MAPBOX_TOKEN =
     "pk.eyJ1Ijoicmtva2EiLCJhIjoiY2t3bG01eHR5MjM1NzJvbXA3MzJzd2hoZiJ9.YAGNzuhJcaNl-0LkKI_ARw";
@@ -55,14 +54,10 @@ export default function Map(props) {
                 }),
             };
         } else {
-            // if selected date is the last update date(since the actualsTimeseries does not include last update data)
-            // returns the most recent data which is actuals
-            // or if the covid data is not updated, return the original us-states.json geo data
             return covidData;
         }
     }
 
-    const db = getDatabase();
     const [hoverInfo, setHoverInfo] = useState(null);
 
     let zoom = 2;
@@ -80,8 +75,6 @@ export default function Map(props) {
         bearing: 0,
         pitch: 0,
     });
-
-    // updateData(states, json);
 
     const dataLayer = {
         id: "data",
@@ -137,18 +130,6 @@ export default function Map(props) {
                 stateData: clickedFeature.properties,
                 timeSeries: timeSeries,
             });
-            if (props.user) {
-                console.log("Storing to DB");
-                // for storing defaultState
-                set(ref(db, "DefaultState" + props.user.uid), {
-                    userId: props.user.uid,
-                    stateData: clickedFeature.properties,
-                    timeSeries: timeSeries,
-                });
-            } else {
-                console.log("Not logged in!");
-                console.log(props.user);
-            }
         }
     };
 

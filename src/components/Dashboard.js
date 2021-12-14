@@ -2,23 +2,22 @@ import React from "react";
 import { useHistory, useParams } from "react-router";
 import CreateSVG from "./CreateSVG";
 import TrendGraph from "./TrendGraph";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, set } from "firebase/database";
+
 
 export function Dashboard(props) {
     const db = getDatabase();
     let history = useHistory();
     let state = { cases: " ", deaths: " ", state: "", date: "", geo: {} };
-    let timeSeries;
-    let date = "";
+    let timeSeries = [];
     const lastInfo = useParams().params;
-    if (lastInfo !== "last") {
+    
+    if (lastInfo !== "last" && lastInfo !== "default") {
         state = history.location.state.stateData;
         timeSeries = history.location.state.timeSeries;
-        date = state.date;
         localStorage.setItem("state", JSON.stringify(state));
         localStorage.setItem("timeSeries", JSON.stringify(timeSeries));
     } else {
-        console.log("User is not logged in!");
         state = JSON.parse(localStorage.getItem("state"));
         timeSeries = JSON.parse(localStorage.getItem("timeSeries"));
         if (state === null || timeSeries === null) {
@@ -32,8 +31,30 @@ export function Dashboard(props) {
                 </div>
             );
         }
-        date = state.date;
     }
+
+    if (lastInfo === "default" && props.user) {
+        const uid = props.user.uid;
+        const testUser = ref(db, "DefaultState" + uid);
+        onValue(testUser, (snapshot) => {
+            const data = snapshot.val();
+            state = data.stateData;
+            timeSeries = data.timeSeries;
+        });
+    }
+
+    const setDefault = () => {
+        if (props.user) {
+            set(ref(db, "DefaultState" + props.user.uid), {
+                userId: props.user.uid,
+                stateData: state,
+                timeSeries: timeSeries
+            });
+        } else {
+            console.log("Not logged in!");
+            console.log(props.user);
+        }
+    } 
 
     return (
         <div className="dashboard">
@@ -61,8 +82,9 @@ export function Dashboard(props) {
                             </p>
                         </div>
                     </div>
+                    <button onClick={setDefault}>Set Default State</button>
                 </section>
-                <CreateSVG data={state} />
+                <CreateSVG data={state} user={props.user}/>
             </div>
             <div className="widget">
                 <h2>Total Cases Trend</h2>

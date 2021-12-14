@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom';
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
 import { QueryClient, QueryClientProvider } from "react-query";
 import 'whatwg-fetch';
 
@@ -31,9 +30,8 @@ const firebaseConfig = {
   messagingSenderId: "782959971432",
   appId: "1:782959971432:web:420ad5fa44505fb07b7fdd",
 };
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+
+initializeApp(firebaseConfig);
 
 ReactDOM.render(
   <React.StrictMode>
