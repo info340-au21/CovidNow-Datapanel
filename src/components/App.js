@@ -27,13 +27,11 @@ export default function App() {
     const auth = getAuth();
     const unregisterAuth = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
-        console.log("Logging in ", firebaseUser.displayName);
         setCurrentUser(firebaseUser);
         return (
           <Redirect to="/overview" />
         )
       } else {
-        console.log("logging out");
         setCurrentUser(null);
         return (
           <Redirect to="/login" />

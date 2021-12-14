@@ -51,8 +51,6 @@ export function Dashboard(props) {
                 timeSeries: timeSeries
             });
         } else {
-            console.log("Not logged in!");
-            console.log(props.user);
         }
     } 
 
