@@ -10,6 +10,7 @@ export function Description() {
             <OverviewPageDemo/>
             <InteractiveMap/>
             <DescriptionDashboard/>
+            <LogInDescription/>
         </div>
     )
 }
@@ -86,6 +87,18 @@ export function DescriptionDashboard() {
                 <img src="../img/FirstTrendChart.gif" alt="dashboard chart one" />
                 <img src="../img/SecondTrendChart.gif" alt="dashboard chart two" />
             </div>
+        </div>
+    )
+}
+
+export function LogInDescription() {
+    return (
+        <div className="description-dashboard-img mt-3">
+            <h2>Login and Logout!</h2>
+            <p>To provide convenience for returning users,</p>
+            <p>Login page allows users to sign in and save the dashboard data from where they left off!</p>
+            <img src="../img/DashboardNoLogin.png" alt="Empty Dashboard" />
+            <img src="../img/LoginFeature.png" alt="Initial Login" />
         </div>
     )
 }

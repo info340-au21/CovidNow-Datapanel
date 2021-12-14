@@ -25,7 +25,7 @@ export function Dashboard(props) {
                 <div className="dashboard">
                     <div className={"dashboard-container"}>
                         <section>
-                            <h1 className="data-head">No History Exists</h1>
+                            <h1 className="data-head no-history">No History Exists</h1>
                         </section>
                     </div>
                 </div>

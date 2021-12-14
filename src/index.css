@@ -37,6 +37,10 @@ h2 span {
     color: white;
 }
 
+.no-history {
+    margin-bottom: 641px;
+}
+
 a {
     text-decoration: none;
     color: #EF4444;
@@ -188,6 +192,11 @@ p {
 .dashboard-top-img img{
     border: 2px solid white;
     width: 65%;
+    margin: 15px;
+}
+
+.description-dashboard-img img {
+    border: 1px solid white;
     margin: 15px;
 }
 

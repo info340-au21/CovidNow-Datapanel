@@ -41,7 +41,8 @@ export function Overview(props) {
                         </div>
                     </div>
                     <div className="slider-container">
-                        <h3>select date</h3>
+                        <h3>Select Date</h3>
+                        <h3>(drag the cursor to adjust dates)</h3>
                         <StyledEngineProvider injectFirst>
                                 <Slider
                                     min={min}
