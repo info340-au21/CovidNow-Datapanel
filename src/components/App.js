@@ -21,19 +21,29 @@ const US_URL = "https://api.covidactnow.org/v2/country/US.json?apiKey=f98006b9d2
 export default function App() {
 
   let [covidData, setData] = useState(states);
-  const [currentUser, setCurrentUser] = useState(null);
-  const auth = getAuth();
+  const [currentUser, setCurrentUser] = useState(undefined);
+  
   useEffect(() => {
-    onAuthStateChanged(auth, (firebaseUser) => {
+    const auth = getAuth();
+    const unregisterAuth = onAuthStateChanged(auth, (firebaseUser) => {
       if (firebaseUser) {
         console.log("Logging in ", firebaseUser.displayName);
         setCurrentUser(firebaseUser);
+        return (
+          <Redirect to="/overview" />
+        )
       } else {
         console.log("logging out");
         setCurrentUser(null);
+        return (
+          <Redirect to="/login" />
+        )
       }
-      console.log(firebaseUser);
     })
+
+    return () => {
+      unregisterAuth();
+    }
   }, [])
 
   useQuery("mapData", () => {
