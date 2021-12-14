@@ -4,6 +4,7 @@ import { Overview } from "./Overview";
 import { Dashboard } from "./Dashboard";
 import { Description } from "./Description";
 import { AboutUs } from "./About";
+import { Contact } from "./Contact";
 import { Login } from "./Login";
 import { ViewControl } from "./ViewControl.js";
 import "../style.css";
@@ -102,6 +103,10 @@ export default function App() {
 
                     <Route path="/login">
                         <Login user={currentUser} />
+                    </Route>
+
+                    <Route path="/contact">
+                        <Contact />
                     </Route>
 
                     <Redirect to="/" />
