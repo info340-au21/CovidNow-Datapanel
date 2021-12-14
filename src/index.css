@@ -30,7 +30,7 @@ h2 {
 
 h2 span {
     font-weight: 700;
-    color: #EF4444;
+    color: #ef4444;
 }
 
 .data-head {
@@ -43,15 +43,16 @@ h2 span {
 
 a {
     text-decoration: none;
-    color: #EF4444;
+    color: #ef4444;
 }
 
 p {
     margin: 0;
 }
 
-
-#US, .trend, .rate {
+#US,
+.trend,
+.rate {
     display: block;
     margin: 0 auto;
     width: 100%;
@@ -66,7 +67,8 @@ p {
     margin-bottom: 4rem;
 }
 
-.trend, .rate {
+.trend,
+.rate {
     margin: 2rem 0;
 }
 
@@ -80,7 +82,8 @@ p {
     margin-right: 20px;
 }
 
-.data-cd h3, .slider-container h3 {
+.data-cd h3,
+.slider-container h3 {
     font-size: 17px;
     color: white;
     margin: 0;
@@ -99,16 +102,15 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #433E43;
+    background-color: #433e43;
 }
-
 
 .view-control a {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
-    width: 60px;  
+    width: 60px;
     color: white;
     border-bottom: transparent solid 3px;
 }
@@ -119,8 +121,8 @@ p {
 }
 
 .view-control div .on {
-    color: #EF4444;
-    border-color: #EF4444;
+    color: #ef4444;
+    border-color: #ef4444;
 }
 
 .view-control div a {
@@ -148,11 +150,11 @@ p {
     box-shadow: 0px 0px 0px 10px rgba(255, 0, 0, 0.2);
 }
 
-.aboutUs-img img{
+.aboutUs-img img {
     display: none;
 }
 
-.details{
+.details {
     margin-bottom: 4rem;
 }
 
@@ -189,7 +191,7 @@ p {
     margin-bottom: 3rem;
 }
 
-.dashboard-top-img img{
+.dashboard-top-img img {
     border: 2px solid white;
     width: 65%;
     margin: 15px;
@@ -198,6 +200,22 @@ p {
 .description-dashboard-img img {
     border: 1px solid white;
     margin: 15px;
+}
+
+.dashboard-container button {
+    display: block;
+    position: relative;
+    border: none;
+    background-color: #ec4444;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 30px;
+    margin: 20px auto;
+}
+
+.dashboard-container button:hover {
+    border: none;
+    background-color: #ec4444a4;
 }
 
 .hoverStat {
@@ -216,7 +234,20 @@ p {
     display: none;
 }
 
-@media  (min-width: 992px) {
+.widget {
+    background-color: #3f3c41;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 8px;
+}
+
+.widget h2 {
+    padding: 1rem;
+    font-weight: 600;
+    color: white;
+}
+
+@media (min-width: 992px) {
     body {
         height: calc(100% - 62px);
     }
@@ -245,7 +276,8 @@ p {
         height: 100%;
     }
 
-    .overview-container, .dashboard-container {
+    .overview-container,
+    .dashboard-container {
         width: calc(100% - 28px);
         margin: 0;
         padding: 0;
@@ -253,12 +285,14 @@ p {
         height: 100%;
     }
 
-    .overview-container section, .dashboard-container section {
+    .overview-container section,
+    .dashboard-container section {
         margin: 0;
         height: 100%;
     }
 
-    .overview-container section:first-child, .dashboard-container section:first-child {
+    .overview-container section:first-child,
+    .dashboard-container section:first-child {
         width: 25%;
     }
 
@@ -276,7 +310,8 @@ p {
         justify-content: space-between;
     }
 
-    .overview-container section:first-child + section, .dashboard-container section:first-child + section {
+    .overview-container section:first-child + section,
+    .dashboard-container section:first-child + section {
         overflow: none;
         display: flex;
         height: 363px;
@@ -287,7 +322,8 @@ p {
         height: calc(100vh - 122px);
     }
 
-    .overview-container section:first-child + section img, .dashboard-container section:first-child + section img {
+    .overview-container section:first-child + section img,
+    .dashboard-container section:first-child + section img {
         margin: 0;
     }
 
@@ -297,21 +333,18 @@ p {
     }
 
     #stateSVG {
-        
         display: block;
         position: relative;
         top: 50%;
         left: 50%;
         transform: translateY(-50%);
-        width: 60%;
-        max-height: 90%;
     }
 
     .rate {
-        max-width:50%;
+        max-width: 50%;
     }
 
-    .aboutUs-img img{
+    .aboutUs-img img {
         display: block;
         margin: auto;
         width: 70%;
@@ -322,10 +355,25 @@ p {
     .map-gif img {
         display: inline-block;
     }
+
+    .widgets-container {
+        width: calc(100% - 16px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .widget {
+        width: 600px;
+    }
+
+    .dashboard-container button {
+        display: inline-block;
+    }
 }
 
-@media  (min-width: 1328px) {
-    .aboutUs-img img{
+@media (min-width: 1328px) {
+    .aboutUs-img img {
         width: 60%;
         margin-bottom: 6rem;
     }

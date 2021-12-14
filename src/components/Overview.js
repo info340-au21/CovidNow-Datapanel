@@ -6,11 +6,8 @@ import StyledEngineProvider from "@mui/material/StyledEngineProvider";
 
 export function Overview(props) {
     let usData = props.usData;
-
-    // let date = usData.lastUpdatedDate;
     let lastUpdatedDate = usData.lastUpdatedDate;
     let [date, setDate] = useState("2021-12-12");
-    // let date = "2021-12-12";
 
     let min = new Date("2020-03-01").getTime();
     let max = new Date().getTime() - 86400000;

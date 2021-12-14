@@ -1,5 +1,5 @@
 export function updateData(featureCollection, data) {
-    const {features} = featureCollection; // why this works
+    const {features} = featureCollection;
     return {
         type: 'FeatureCollection',
         features: features.map(f => {
