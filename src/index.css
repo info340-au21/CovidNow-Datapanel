@@ -253,6 +253,25 @@ p {
     color: white;
 }
 
+form h1 {
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    width: 100%;
+}
+
+form button {
+    width: 100%;
+}
+
 @media (min-width: 992px) {
     body {
         height: calc(100% - 62px);

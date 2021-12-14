@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../index.css";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -21,6 +22,7 @@ export function Contact() {
       onSubmit={handleSubmit}
       method="POST"
     >
+      <h1>Contact Us</h1>
       <div className="mb-3 pt-0">
         <input
           type="text"
