@@ -154,7 +154,6 @@ export default function Map(props) {
     const onClick = (event) => {
         const { features } = event;
         const clickedFeature = features && features[0];
-        console.log(covidData);
         if (
             clickedFeature &&
             !clickedFeature.properties.class &&
@@ -164,7 +163,6 @@ export default function Map(props) {
             let timeSeries = covidData.features.filter((f) => {
                 return f.properties.state === clickedState;
             })[0].data;
-            console.log(timeSeries);
             history.push("/dashboard/" + clickedState, {
                 stateData: clickedFeature.properties,
                 timeSeries: timeSeries,

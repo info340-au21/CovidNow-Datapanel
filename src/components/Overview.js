@@ -9,8 +9,18 @@ export function Overview(props) {
 
     // let date = usData.lastUpdatedDate;
     let lastUpdatedDate = usData.lastUpdatedDate;
-    let [date, setDate] = useState("2020-03-01");
-    // let date = "2020-03-01"
+    let [date, setDate] = useState("2021-12-12");
+    // let date = "2021-12-12";
+
+    let min = new Date("2020-03-01").getTime();
+    let max = new Date().getTime() - 86400000;
+    useEffect(() => {
+        setDate(lastUpdatedDate);
+    }, [lastUpdatedDate]);
+
+    function handleChange(event, newValue) {
+        setDate(new Date(newValue).toISOString().slice(0, 10));
+    }
 
     return (
         <div className="overview">
@@ -33,13 +43,22 @@ export function Overview(props) {
                     <div className="slider-container">
                         <h3>select date</h3>
                         <StyledEngineProvider injectFirst>
-                            <Slider
-                                className="slider"
-                                defaultValue={50}
-                                aria-label="Default"
-                                valueLabelDisplay="auto"
-                            />
-                        </StyledEngineProvider>
+                                <Slider
+                                    min={min}
+                                    max={max}
+                                    defaultValue={max}
+                                    className="slider"
+                                    step={86400000}
+                                    aria-label="Default"
+                                    valueLabelDisplay="auto"
+                                    onChange={handleChange}
+                                    valueLabelFormat={(value) => {
+                                        return new Date(value)
+                                            .toISOString()
+                                            .slice(0, 10);
+                                    }}
+                                />
+                            </StyledEngineProvider>
                     </div>
                 </section>
                 <section id="US">
