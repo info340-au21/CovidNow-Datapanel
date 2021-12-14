@@ -267,6 +267,7 @@ form {
 
 form input, form textarea {
     width: 100%;
+    color: black;
 }
 
 form button {
