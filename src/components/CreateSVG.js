@@ -3,10 +3,8 @@ import * as d3 from 'd3';
 
 
 export default function CreateSVG(props) {
-
     var cases = props.data.cases;
     var geo = props.data.geo;
-    console.log(props.data);
     var geoJson = JSON.parse(geo);
     const width = 382
     const height = 284

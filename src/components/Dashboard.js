@@ -84,7 +84,7 @@ export function Dashboard(props) {
                 </section>
                 <CreateSVG data={state} user={props.user}/>
             </div>
-            <div class="widgets-container">
+            <div className="widgets-container">
                 <div className="widget">
                     <h2>Total Cases Trend</h2>
                     <TrendGraph data={timeSeries} type="cases" title="Cases" />
