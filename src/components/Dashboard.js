@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
 import CreateSVG from "./CreateSVG";
 import TrendGraph from "./TrendGraph";
@@ -10,8 +10,16 @@ export function Dashboard(props) {
     let history = useHistory();
     let state = { cases: " ", deaths: " ", state: "", date: "", geo: {} };
     let timeSeries = [];
+    let data = {};
     const lastInfo = useParams().params;
-    
+    const [disable, setDisable] = useState(false);
+
+    useEffect(() => {
+        if (state.state === localStorage.getItem("default")) {
+            setDisable(true);
+        }
+    }, [])
+
     if (lastInfo !== "last" && lastInfo !== "default") {
         state = history.location.state.stateData;
         timeSeries = history.location.state.timeSeries;
@@ -37,9 +45,10 @@ export function Dashboard(props) {
         const uid = props.user.uid;
         const testUser = ref(db, "DefaultState" + uid);
         onValue(testUser, (snapshot) => {
-            const data = snapshot.val();
+            data = snapshot.val();
             state = data.stateData;
             timeSeries = data.timeSeries;
+            localStorage.setItem("default", data.stateData.state);
         });
     }
 
@@ -50,9 +59,10 @@ export function Dashboard(props) {
                 stateData: state,
                 timeSeries: timeSeries
             });
-        } else {
+            setDisable(true);
         }
     } 
+
 
     return (
         <div className="dashboard">
@@ -80,7 +90,7 @@ export function Dashboard(props) {
                             </p>
                         </div>
                     </div>
-                    <button onClick={setDefault}>Set Default State</button>
+                    <button className="btn btn-dark" onClick={setDefault} disabled={disable}>Set Default State</button>
                 </section>
                 <CreateSVG data={state} user={props.user}/>
             </div>
