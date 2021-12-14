@@ -201,7 +201,9 @@ p {
     margin: 15px;
 }
 
-.dashboard-container button {
+.dashboard-container .button {
+    width: 180px;
+    text-align: center;
     display: block;
     position: relative;
     background-color: #ec4444;
@@ -211,9 +213,10 @@ p {
     width: 30vh;
 }
 
-.dashboard-container button:hover {
+.dashboard-container .button:hover {
     border: none;
     background-color: #ec4444a4;
+    cursor: pointer;
 }
 
 .hoverStat {
@@ -365,7 +368,7 @@ p {
         width: 600px;
     }
 
-    .dashboard-container button {
+    .dashboard-container .button {
         display: inline-block;
     }
 }
