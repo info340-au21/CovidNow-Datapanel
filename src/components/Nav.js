@@ -53,6 +53,9 @@ export function NavBar(props) {
                     <li className="nav-item">
                         <NavLink className="nav-link" activeClassName="active" to="/about">About Us</NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" activeClassName="active" to="/contact">Contact Us</NavLink>
+                    </li>
                 </ul>
                 <div className="nav navbar-nav navbar-right">
                     {!props.user &&
