@@ -53,6 +53,7 @@ export function Dashboard(props) {
     }
 
     const setDefault = () => {
+        console.log("click");
         if (props.user) {
             set(ref(db, "DefaultState" + props.user.uid), {
                 userId: props.user.uid,
@@ -90,7 +91,7 @@ export function Dashboard(props) {
                             </p>
                         </div>
                     </div>
-                    <button className="btn btn-dark" onClick={setDefault} disabled={disable}>Set Default State</button>
+                    <button className={disable ? "" : "enabled"} onClick={setDefault} disabled={disable}>Set Default State</button>
                 </section>
                 <CreateSVG data={state} user={props.user}/>
             </div>

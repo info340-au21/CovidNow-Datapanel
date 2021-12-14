@@ -150,7 +150,7 @@ export default function Map(props) {
                 <div
                     className="hoverStat"
                     style={{ left: hoverInfo.x, top: hoverInfo.y }}>
-                    <div>State: {hoverInfo.feature.properties.name}</div>
+                    <div>State: {hoverInfo.feature.properties.name ? hoverInfo.feature.properties.name : "no data"}</div>
                     <div>
                         Cases:{" "}
                         {hoverInfo.feature.properties.cases
@@ -163,7 +163,7 @@ export default function Map(props) {
                             ? hoverInfo.feature.properties.deaths
                             : "no data"}
                     </div>
-                    <div>date: {hoverInfo.feature.properties.date}</div>
+                    <div>date: {hoverInfo.feature.properties.date ? hoverInfo.feature.properties.date : "no data"}</div>
                 </div>
             )}
         </MapGL>
