@@ -13,42 +13,26 @@ export function Dashboard(props) {
     const lastInfo = useParams().params;
     if (lastInfo !== "last") {
         state = history.location.state.stateData;
-        console.log(state);
         timeSeries = history.location.state.timeSeries;
-        console.log(timeSeries);
         date = state.date;
         localStorage.setItem("state", JSON.stringify(state));
         localStorage.setItem("timeSeries", JSON.stringify(timeSeries));
     } else {
-        // if (props.user) {
-        //     console.log("User is logged in!");
-        //     const userData = ref(db, "DefaultState" + props.user.uid);
-    
-            // onValue(userData, (snapshot) => {
-            //     state = snapshot.child("state").val();
-            //     timeSeries = snapshot.child("timeSeries");
-            //     console.log(timeSeries);
-            // });
-        // } else {
-            console.log("User is not logged in!");
-                console.log(localStorage.getItem("timeSeries"));
-                state = JSON.parse(localStorage.getItem("state"));
-                console.log(state);
-                timeSeries = JSON.parse(localStorage.getItem("timeSeries"));
-                console.log(timeSeries);            
-                if (state === null || timeSeries === null) {
-                    return (
-                        <div className="dashboard">
-                            <div className={"dashboard-container"}>
-                            <section>
-                                <h1 className="data-head">No History Exists</h1>
-                            </section>
-                            </div>
-                        </div>
-                    );
-                }
-                date = state.date;
-        // }
+        console.log("User is not logged in!");
+        state = JSON.parse(localStorage.getItem("state"));
+        timeSeries = JSON.parse(localStorage.getItem("timeSeries"));
+        if (state === null || timeSeries === null) {
+            return (
+                <div className="dashboard">
+                    <div className={"dashboard-container"}>
+                        <section>
+                            <h1 className="data-head">No History Exists</h1>
+                        </section>
+                    </div>
+                </div>
+            );
+        }
+        date = state.date;
     }
 
     return (
@@ -82,19 +66,27 @@ export function Dashboard(props) {
             </div>
             <div className="widget">
                 <h2>Total Cases Trend</h2>
-                <TrendGraph data={timeSeries} type="cases" title="Cases"/>
+                <TrendGraph data={timeSeries} type="cases" title="Cases" />
             </div>
             <div className="widget">
                 <h2>New Cases Trend</h2>
-                <TrendGraph data={timeSeries} type="newCases" title="New Cases"/>
+                <TrendGraph
+                    data={timeSeries}
+                    type="newCases"
+                    title="New Cases"
+                />
             </div>
             <div className="widget">
                 <h2>Total Deaths Trend</h2>
-                <TrendGraph data={timeSeries} type="deaths" title="Deaths"/>
+                <TrendGraph data={timeSeries} type="deaths" title="Deaths" />
             </div>
             <div className="widget">
                 <h2>New Deaths Trend</h2>
-                <TrendGraph data={timeSeries} type="newDeaths" title="New Deaths"/>
+                <TrendGraph
+                    data={timeSeries}
+                    type="newDeaths"
+                    title="New Deaths"
+                />
             </div>
         </div>
     );

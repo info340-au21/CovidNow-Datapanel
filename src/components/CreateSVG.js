@@ -4,8 +4,6 @@ import * as d3 from 'd3';
 
 export default function CreateSVG(props) {
 
-    let data = props.data;
-    console.log(data);
     var cases = props.data.cases;
     var geoJson = JSON.parse(props.data.geo); 
     const width = 382
@@ -25,7 +23,6 @@ export default function CreateSVG(props) {
 
     const projection = d3.geoAlbers().fitSize([width, height], geoJson)
     const path = d3.geoPath().projection(projection)
-    console.log(path(geoJson));
 
     return (
         <section id="state">
