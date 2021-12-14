@@ -173,6 +173,7 @@ export default function Map(props) {
                 set(ref(db, "DefaultState" + props.user.uid), {
                     userId: props.user.uid,
                     stateData: clickedFeature.properties,
+                    timeSeries: timeSeries,
                 });
             } else {
                 console.log("Not logged in!");
