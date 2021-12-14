@@ -80,7 +80,7 @@ export function DescriptionDashboard() {
             <h2>Dashboard.</h2>
             <p>When user clicks on a state from the overview page, the web brings the user to the dashboard page,</p>
             <div className="dashboard-top-img">
-                <img src="../img/DashboardTop.png" alt="dashboard statstics" />
+                <img src="../img/TopDashboard.png" alt="dashboard statstics" />
             </div>
             <p>The dashboard page includes a comprehensive COVID-19 data & interactive COVID-19 data chart for the chosen state.</p>
             <div className="map-gif">
@@ -97,8 +97,8 @@ export function LogInDescription() {
             <h2>Login and Logout!</h2>
             <p>To provide convenience for returning users,</p>
             <p>Login page allows users to sign in and save the dashboard data from where they left off!</p>
-            <img src="../img/DashboardNoLogin.png" alt="Empty Dashboard" />
-            <img src="../img/LoginFeature.png" alt="Initial Login" />
+            <img src="../img/NoLoginDashboard.png" alt="Empty Dashboard" />
+            <img src="../img/FeatureLogin.png" alt="Initial Login" />
         </div>
     )
 }
