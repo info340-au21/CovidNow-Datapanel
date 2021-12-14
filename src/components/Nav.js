@@ -6,7 +6,6 @@ export function NavBar(props) {
     const handleSignOut = (event) => {
         signOut(getAuth());
     }
-    console.log(props.user);
     return (
         <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
             <NavLink className="navbar-brand" exact to="/">
