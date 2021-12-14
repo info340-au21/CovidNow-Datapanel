@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../index.css";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
