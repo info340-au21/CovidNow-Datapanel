@@ -151,8 +151,18 @@ export default function Map(props) {
                     className="hoverStat"
                     style={{ left: hoverInfo.x, top: hoverInfo.y }}>
                     <div>State: {hoverInfo.feature.properties.name}</div>
-                    <div>Cases: {hoverInfo.feature.properties.cases ? hoverInfo.feature.properties.cases : "no data"}</div>
-                    <div>Deaths: {hoverInfo.feature.properties.deaths ? hoverInfo.feature.properties.deaths : "no data"}</div>
+                    <div>
+                        Cases:{" "}
+                        {hoverInfo.feature.properties.cases
+                            ? hoverInfo.feature.properties.cases
+                            : "no data"}
+                    </div>
+                    <div>
+                        Deaths:{" "}
+                        {hoverInfo.feature.properties.deaths
+                            ? hoverInfo.feature.properties.deaths
+                            : "no data"}
+                    </div>
                     <div>date: {hoverInfo.feature.properties.date}</div>
                 </div>
             )}
