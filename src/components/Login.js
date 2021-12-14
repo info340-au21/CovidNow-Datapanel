@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "../login.css";
+import { Redirect } from 'react-router-dom';
+import { getDatabase, ref, onValue } from "firebase/database";
 
 import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth'
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
@@ -18,13 +20,36 @@ const firebaseUIConfig = {
   }
 }
 
-export function Login() {
-  return (
-    <div className="container">
-      <LeftFlex />
-      <RightFlex />
-    </div>
-  );
+export function Login(props) {
+  const [userState, setUserState] = useState(null);
+
+  if (!props.user) {
+    return (
+      <div className="container">
+        <LeftFlex />
+        <RightFlex />
+      </div>
+    );
+  } else {
+    const db = getDatabase();
+    const userData = ref(db, "DefaultState" + props.user.uid);
+    onValue(userData, (snapshot) => {
+      setUserState(snapshot.child("stateData").child("state").val());
+      console.log(userState);
+    });
+    console.log(userState);
+    if (userState) {
+      console.log("Test1")
+      return (
+        <Redirect to="/dashboard/last" />
+      )
+    } else {
+      console.log("Test2")
+      return (
+        <Redirect to="/overview" />
+      )
+    }
+  }
 }
 
 // const LoginForm = () => {
