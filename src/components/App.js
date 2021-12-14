@@ -22,8 +22,6 @@ export default function App() {
 
   let [covidData, setData] = useState(states);
   const [currentUser, setCurrentUser] = useState(null);
-  console.log(covidData);
-
   const auth = getAuth();
   useEffect(() => {
     onAuthStateChanged(auth, (firebaseUser) => {
@@ -91,7 +89,7 @@ export default function App() {
           </Route>
 
           <Route path="/login">
-            <Login />
+            <Login user={currentUser}/>
           </Route>
 
           <Redirect to="/" />
