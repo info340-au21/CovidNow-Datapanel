@@ -11,12 +11,6 @@ export default function CasesGraph(props) {
         return { x: day.date, y: day[type] };
     });
 
-    // let parsedData = timeSeries.map((day) => {
-    //     let date = day.date.split("-");
-    //     console.log(date);
-    //     return { x: new Date(date[0], date[1], date[2]), y: day.newCases };
-    // });
-
     return (
         <Line
             data={{
