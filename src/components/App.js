@@ -73,45 +73,53 @@ export default function App() {
   }
 
   return (
-    <div>
-      <header>
-        <NavBar user={currentUser}/>
-      </header>
+      <div>
+          <header>
+              <NavBar user={currentUser} />
+          </header>
 
-      <main>
-        <Switch>
-          <Route exact path="/">
-            <Overview usData={usData} covidData={covidData} user={currentUser}/>
-          </Route>
+          <main>
+              <Switch>
+                  <Route exact path="/">
+                      <Overview
+                          usData={usData}
+                          covidData={covidData}
+                          user={currentUser}
+                      />
+                  </Route>
 
-          <Route path="/dashboard/:params">
-            <Dashboard user={currentUser}/>
-          </Route>
+                  <Route path="/dashboard/:params">
+                      <Dashboard user={currentUser} />
+                  </Route>
 
-          <Route path="/description">
-            <Description/>
-          </Route>
+                  <Route path="/description">
+                      <Description />
+                  </Route>
 
-          <Route path="/about">
-            <AboutUs />
-          </Route>
+                  <Route path="/about">
+                      <AboutUs />
+                  </Route>
 
-          <Route path="/login">
-            <Login user={currentUser}/>
-          </Route>
+                  <Route path="/login">
+                      <Login user={currentUser} />
+                  </Route>
 
-          <Redirect to="/" />
-        </Switch>
-      </main>
+                  <Redirect to="/" />
+              </Switch>
+          </main>
 
-      <ViewControl />
+          <ViewControl user={currentUser} />
 
-      <footer>
-        <p className="copyright-text">
-          Copyright &copy; 2021 All Rights Reserved by
-          <NavLink to="/about"> Data Panel Project Team Members</NavLink>.
-        </p>
-      </footer>
-    </div>
+          <footer>
+              <p className="copyright-text">
+                  Copyright &copy; 2021 All Rights Reserved by
+                  <NavLink to="/about">
+                      {" "}
+                      Data Panel Project Team Members
+                  </NavLink>
+                  .
+              </p>
+          </footer>
+      </div>
   );
 }

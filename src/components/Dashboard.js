@@ -80,7 +80,7 @@ export function Dashboard(props) {
                             </p>
                         </div>
                     </div>
-                    <button onClick={setDefault}>Set Default State</button>
+                    <div className="button" onClick={setDefault}>Set Default State</div>
                 </section>
                 <CreateSVG data={state} user={props.user}/>
             </div>
