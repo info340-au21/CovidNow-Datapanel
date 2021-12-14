@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-const FORM_ENDPOINT = ""; // TODO - fill on the later step
-
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = () => {
@@ -19,10 +17,9 @@ export function Contact() {
 
   return (
     <form
-      action={FORM_ENDPOINT}
+      action="mailto:coviddb@gmail.com"
       onSubmit={handleSubmit}
       method="POST"
-      target="_blank"
     >
       <div className="mb-3 pt-0">
         <input
@@ -52,7 +49,7 @@ export function Contact() {
       </div>
       <div className="mb-3 pt-0">
         <button
-          className="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          className="btn btn-dark"
           type="submit"
         >
           Send a message
