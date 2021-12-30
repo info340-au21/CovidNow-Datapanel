@@ -1,3 +1,3 @@
-# INFO 340 Project
+# COVID 19 Datapanel
 
-This repository contains code for an interactive information web app, created for the _Client-Side Web Development_ course at the UW iSchool.
+Built using React for INFO 340 - Client Side Development. Live version can be found at https://covidnow.us
